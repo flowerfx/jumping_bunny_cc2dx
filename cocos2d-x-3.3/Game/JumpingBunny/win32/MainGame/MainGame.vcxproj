@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F3612E7F-D62D-48E2-ACC6-BD2700435C42}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MainGame</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;COCOS2DXWIN32_EXPORTS;_VARIADIC_MAX=10;_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../../SourceGame/;$(SolutionDir)..\..\..\;$(SolutionDir)..\..\..\cocos;$(SolutionDir)..\..\..\cocos\editor-support;$(SolutionDir)..\..\..\cocos\audio\include;$(SolutionDir)..\..\..\cocos\network;$(SolutionDir)..\..\..\external;$(SolutionDir)..\..\..\external\chipmunk\include\chipmunk;$(SolutionDir)..\..\..\external\curl\include\win32;$(SolutionDir)..\..\..\external\websockets\win32\include;$(SolutionDir)..\..\..\extensions;$(SolutionDir)..\..\..\cocos\renderer;$(SolutionDir)..\..\..\cocos\ui;$(SolutionDir)..\..\..\cocos\base;$(SolutionDir)..\..\..\cocos\physics;$(SolutionDir)..\..\..\cocos\math\;$(SolutionDir)..\..\..\cocos\2d\;$(SolutionDir)..\..\..\external\glfw3\include\win32;$(SolutionDir)..\..\..\external\win32-specific\gles\include\OGLES;$(SolutionDir)..\..\..\cocos\platform\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>$(ProjectDir);%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libcurl_imp.lib;websockets.lib;opengl32.lib;glew32.lib;libzlib.lib;libpng.lib;libjpeg.lib;libtiff.lib;libwebp.lib;libiconv.lib;glfw3.lib;freetype250.lib;winmm.lib;ws2_32.lib;libchipmunk.lib;libbox2d.lib;libSpine.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\external\win32-specific\gles\prebuilt;$(SolutionDir)..\..\..\external\win32-specific\zlib\prebuilt;$(SolutionDir)..\..\..\external\png\prebuilt\win32;$(SolutionDir)..\..\..\external\jpeg\prebuilt\win32;$(SolutionDir)..\..\..\external\tiff\prebuilt\win32\;$(SolutionDir)..\..\..\external\webp\prebuilt\win32\;$(SolutionDir)..\..\..\external\win32-specific\icon\prebuilt\;$(SolutionDir)..\..\..\external\glfw3\prebuilt\win32\;$(SolutionDir)..\..\..\external\freetype2\prebuilt\win32\;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_VARIADIC_MAX=10;_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../SourceGame/;$(SolutionDir)..\..\..\;$(SolutionDir)..\..\..\cocos;$(SolutionDir)..\..\..\cocos\editor-support;$(SolutionDir)..\..\..\cocos\audio\include;$(SolutionDir)..\..\..\cocos\network;$(SolutionDir)..\..\..\external;$(SolutionDir)..\..\..\external\chipmunk\include\chipmunk;$(SolutionDir)..\..\..\external\curl\include\win32;$(SolutionDir)..\..\..\external\websockets\win32\include;$(SolutionDir)..\..\..\extensions;$(SolutionDir)..\..\..\cocos\renderer;$(SolutionDir)..\..\..\cocos\ui;$(SolutionDir)..\..\..\cocos\base;$(SolutionDir)..\..\..\cocos\physics;$(SolutionDir)..\..\..\cocos\math\;$(SolutionDir)..\..\..\cocos\2d\;$(SolutionDir)..\..\..\external\glfw3\include\win32;$(SolutionDir)..\..\..\external\win32-specific\gles\include\OGLES;$(SolutionDir)..\..\..\cocos\platform\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>$(ProjectDir);%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <BrowseInformation>true</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalUsingDirectories>$(ProjectDir);%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\external\win32-specific\gles\prebuilt;$(SolutionDir)..\..\..\external\win32-specific\zlib\prebuilt;$(SolutionDir)..\..\..\external\png\prebuilt\win32;$(SolutionDir)..\..\..\external\jpeg\prebuilt\win32;$(SolutionDir)..\..\..\external\tiff\prebuilt\win32\;$(SolutionDir)..\..\..\external\webp\prebuilt\win32\;$(SolutionDir)..\..\..\external\win32-specific\icon\prebuilt\;$(SolutionDir)..\..\..\external\glfw3\prebuilt\win32\;$(SolutionDir)..\..\..\external\freetype2\prebuilt\win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;libzlib.lib;libpng.lib;libjpeg.lib;libtiff.lib;libwebp.lib;libiconv.lib;glfw3.lib;freetype250.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>$(IntDir)$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
+    <Manifest>
+      <OutputManifestFile>$(IntDir)$(TargetName)$(TargetExt).embed.manifest</OutputManifestFile>
+    </Manifest>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\SourceGame\Background\BGObject.cpp" />
+    <ClCompile Include="..\..\SourceGame\Background\CloudObject.cpp" />
+    <ClCompile Include="..\..\SourceGame\Background\ObjectBGEntity.cpp" />
+    <ClCompile Include="..\..\SourceGame\Control\InputManager.cpp" />
+    <ClCompile Include="..\..\SourceGame\GamePlay\APManager.cpp" />
+    <ClCompile Include="..\..\SourceGame\GamePlay\EntityObject.cpp" />
+    <ClCompile Include="..\..\SourceGame\GamePlay\MainCharacterObject.cpp" />
+    <ClCompile Include="..\..\SourceGame\GamePlay\ManageObjectAP.cpp" />
+    <ClCompile Include="..\..\SourceGame\GamePlay\OrbitObject.cpp" />
+    <ClCompile Include="..\..\SourceGame\Init\AppDelegate.cpp" />
+    <ClCompile Include="..\..\SourceGame\Init\DisplayView.cpp" />
+    <ClCompile Include="..\..\SourceGame\MainGame.cpp" />
+    <ClCompile Include="..\..\SourceGame\MainSceneGame.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\BoostMenu.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\HUDMenu.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\IAPMenu.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\IGM.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\InfoMenu.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\MainMenu.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\MenuEntity.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\MenuManager.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\OptionsMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\PopUpMenu.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\ResultMenu.cpp" />
+    <ClCompile Include="..\..\SourceGame\Menu\SplashScreen.cpp" />
+    <ClCompile Include="..\..\SourceGame\Utility\BoostManager.cpp" />
+    <ClCompile Include="..\..\SourceGame\Utility\FileManager.cpp" />
+    <ClCompile Include="..\..\SourceGame\Utility\IAPManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Utility\LoadDataXML.cpp" />
+    <ClCompile Include="..\..\SourceGame\Utility\ObjectTexture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\SourceGame\Background\BGObject.h" />
+    <ClInclude Include="..\..\SourceGame\Background\CloudObject.h" />
+    <ClInclude Include="..\..\SourceGame\Background\ObjectBGEntity.h" />
+    <ClInclude Include="..\..\SourceGame\Control\InputManager.h" />
+    <ClInclude Include="..\..\SourceGame\GamePlay\APManager.h" />
+    <ClInclude Include="..\..\SourceGame\GamePlay\EntityObject.h" />
+    <ClInclude Include="..\..\SourceGame\GamePlay\MainCharacterObject.h" />
+    <ClInclude Include="..\..\SourceGame\GamePlay\ManageObjectAP.h" />
+    <ClInclude Include="..\..\SourceGame\GamePlay\OrbitObject.h" />
+    <ClInclude Include="..\..\SourceGame\Init\AppDelegate.h" />
+    <ClInclude Include="..\..\SourceGame\Init\AppMacros.h" />
+    <ClInclude Include="..\..\SourceGame\Init\DisplayView.h" />
+    <ClInclude Include="..\..\SourceGame\Init\ParamTexture.h" />
+    <ClInclude Include="..\..\SourceGame\MainSceneGame.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\BoostMenu.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\HUDMenu.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\IAPMenu.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\IGM.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\InfoMenu.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\MainMenu.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\MenuEntity.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\MenuManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\OptionsMenu.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\PopUpMenu.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\ResultMenu.h" />
+    <ClInclude Include="..\..\SourceGame\Menu\SplashScreen.h" />
+    <ClInclude Include="..\..\SourceGame\Utility\BoostManager.h" />
+    <ClInclude Include="..\..\SourceGame\Utility\FileManager.h" />
+    <ClInclude Include="..\..\SourceGame\Utility\IAPManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Utility\LoadDataXML.h" />
+    <ClInclude Include="..\..\SourceGame\Utility\ObjectTexture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\cocos\2d\libcocos2d.vcxproj">
+      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

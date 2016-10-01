@@ -1,0 +1,964 @@
+<GAME>
+	<Object>
+		<Effects>
+			<texture path="Texture\GamePlay\Atlas.png" number="12">
+				<Rect string="eff_snowflake" val="0-2018-32-28"/>
+				<Rect string="eff_stars" val="38-2018-30-30"/>
+				<Rect string="eff_Point" val="70-2018-32-32"/>
+				<Rect string="eff_snow" val="104-2018-30-30"/>
+				<Rect string="eff_distorled" val="140-2018-32-8"/>
+				<Rect string="eff_bigFire" val="0-1940-60-60"/>
+				<Rect string="eff_smallFire" val="0-1906-30-30"/>
+				<Rect string="eff_bigNapalm" val="68-1940-60-60"/>
+				<Rect string="eff_smallNapalm" val="62-1906-30-30"/>
+				<Rect string="eff_leave" val="178-2014-20-32"/>
+				<Rect string="eff_star" val="202-2018-24-24"/>
+				<Rect string="eff_starly" val="230-2018-26-26"/>
+			</texture>
+		</Effects>
+		<Mainchar>
+			<texture path="Texture\GamePlay\Atlas.png" number="3">
+				<Rect string="mainBody" val="1898-777-150-150"/>
+				<Rect string="ArrowPoint" val="1700-720-135-227"/>
+				<Rect string="streak" val="328-900-54-118"/>
+			</texture>
+			<Animation path="Texture\GamePlay\">
+				<texture path="BunnyAnimation0.png"/>
+				<plist 	 path="BunnyAnimation0.plist"/>
+				<json	 path="BunnyAnimation.ExportJson"/>
+			</Animation>
+			<!--
+				speedMove is the delta speed with orbit ex: speedmove of orbit is 2, and the value is 5, so the final speedmove of char is 2*5 = 10
+			-->
+			<valueMain speedRotate="1.5f" JumpDuration="40.0" speedJump="4.75" scaleRatio="7" speedMove="5" timedeath="20" deltatimedeath ="1"/>
+			<valueGravity gravityPress="0.5" gravityDelta="0.1"/>
+		</Mainchar>
+		<Streak>
+			<texture path="Texture\GamePlay\streak.png"/>
+		</Streak>
+		<Orbit>
+			<orbitSize numperframe = "8" distance ="150"  minRatio="3" maxRatio = "5" ThreadHoldMoveUpdown = "10" ChangeCreateBomb = "3" /> <!--ThreadHoldMoveUpdown is the score that the updown orbit will appear , change create maximum is 10--> 
+			<TextureName>Texture\GamePlay\Atlas.png</TextureName>			
+			<Rect>0-0-448-448</Rect>
+			<SpeedRotate>0.8</SpeedRotate>
+			<SpeedMove>1.5</SpeedMove>
+			<MaxObjectDec>1_4</MaxObjectDec>
+			<MaxObjectInter>1_1</MaxObjectInter>					
+			<pointAlive>450</pointAlive>
+			<SpeedMoveUpDown>0.5f</SpeedMoveUpDown>
+			<OrbitObject number="3">
+				<Rect string="orbit" num="1">
+					<value id="0" val="0-0-448-448"/>
+				</Rect>
+				<Rect string="orbit_snow" num="1">
+					<value id="0" val="936-0-448-448"/>
+				</Rect>
+				<Rect string="bubble" num="1">
+					<value id="0" val="0-462-256-256"/>
+				</Rect>
+				<Rect string="bomb" num="1">
+					<value id="0" val="2-742-262-262"/>
+				</Rect>
+        <Rect string="time_bomb" num="1">
+					<value id="0" val="0-1020-264-280"/>
+				</Rect>
+			</OrbitObject>		
+			<DecoObject number="2">
+				<Rect string="deco0" num="1">
+					<value id="0" val="366-464-622-326"/>
+				</Rect>
+				<Rect string="deco1" num="1">
+					<value id="0" val="416-792-572-144"/>
+				</Rect>
+				<Rect string="deco0_snow" num="1">
+					<value id="0" val="1012-464-622-326"/>
+				</Rect>
+				<Rect string="deco1_snow" num="1">
+					<value id="0" val="1062-792-572-144"/>
+				</Rect>		
+			</DecoObject>
+			<InterObject number="1">
+				<Rect string="inter0" num="1">
+					<value id="0" val="468-0-468-460"/>
+				</Rect>
+				<Rect string="inter0_snow" num="1">
+					<value id="0" val="1402-0-468-460"/>
+				</Rect>
+			</InterObject>
+		</Orbit>
+	</Object>
+	<GamePlay>
+    <!-- 
+    type_orbit = 0 is orbit, 1 is boom, 2 is time_down_boom, 3 is bullet orbit
+    DirectMove = "x_y_z" x direct move at x, y is direct move at y, z is distance move
+    rotate_around_point = "x_y_z" x_y is position, z is speed  move
+    -->
+	<!-- level part 0 -->
+	<gameplay id = "0" name ="part_0" des="zz" time ="25" >
+			<valueMain speedRotate="1.0f" speedJump="4" scaleRatio="10" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+			
+			<obj o_id="0" source= "orbit" name="orbit_0" pos="0.25_0.5" ratioscale="4"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+			<obj o_id="1" source= "orbit" name="orbit_1" pos="0.5_0.5"  ratioscale="4"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+			<obj o_id="2" source= "orbit" name="orbit_2" pos="0.75_0.5" ratioscale="4"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+			<obj o_id="0" source= "star" name="star_1" pos="0.25_0.65" ratioscale="4" delta_speed_scale = "0.01" max_scale = "1.75"/>
+			<obj o_id="1" source= "star" name="star_2" pos="0.375_0.5"  ratioscale="4" delta_speed_scale = "0.015" max_scale = "1.75"/>
+		  <obj o_id="2" source= "star" name="star_3" pos="0.68_0.5" ratioscale="4" delta_speed_scale = "0.012" max_scale = "1.75"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.75_0.65" ratioscale="2"/>
+		</gameplay>
+	<gameplay id = "1" name ="part_1" des="zz" time ="18" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="10" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.15_0.65" ratioscale="4"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.35_0.35"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.55_0.35" ratioscale="8"  SpeedRotate = "1.2"   SpeedMove = "2.5" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.8_0.615"  ratioscale="4"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.225_0.5" ratioscale="4" delta_speed_scale = "0.01" max_scale = "1.75"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.425_0.35"  ratioscale="4" delta_speed_scale = "0.015" max_scale = "1.75"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.675_0.5" ratioscale="4" delta_speed_scale = "0.012" max_scale = "1.75"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8_0.775" ratioscale="2"/>
+    </gameplay>
+	<gameplay id = "2" name ="part_2" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="10" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.166_0.675" ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.322_0.35"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.488_0.645" ratioscale="8"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.644_0.35"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.811_0.725"  ratioscale="8"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.244_0.5" ratioscale="6" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.488_0.725"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.635_0.5" ratioscale="6" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.822_0.805" ratioscale="2"/>
+    </gameplay>
+	<gameplay id = "3" name ="part_3" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="10" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.125_0.35" ratioscale="6"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.125_0.65"  ratioscale="6"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.45_0.625" ratioscale="6"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.775_0.705"  ratioscale="6"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.875_0.425"  ratioscale="6"  SpeedRotate = "0.5" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.2875_0.5" ratioscale="6" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6125_0.685"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.825_0.565" ratioscale="6" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.775_0.805" ratioscale="2"/>
+    </gameplay>
+	<gameplay id = "4" name ="part_4" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="10" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1_0.5" ratioscale="5"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.25_0.5"  ratioscale="6"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4_0.625" ratioscale="6"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.6_0.455"  ratioscale="6"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.9_0.575"  ratioscale="8"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.25_0.588" ratioscale="6" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5_0.525"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.75_0.575" ratioscale="6" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9_0.635" ratioscale="2"/>
+    </gameplay>
+	<gameplay id = "5" name ="part_5" des="zz" time ="15" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="10" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.15_0.5" ratioscale="6"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3_0.7"  ratioscale="5"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3_0.3" ratioscale="5"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.5_0.5"  ratioscale="6"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.645_0.5"  ratioscale="7"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.745_0.5"  ratioscale="7"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.85_0.5"  ratioscale="6"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3_0.6" ratioscale="6" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5_0.4"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.75_0.575" ratioscale="6" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.85_0.6" ratioscale="2"/>
+    </gameplay>
+	<gameplay id = "6" name ="part_6" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.15088_0.3991" ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2846_0.4798"  ratioscale="10"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4326_0.5029" ratioscale="8"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.6406_0.5026"  ratioscale="10"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.6406_0.65397"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6406_0.34472"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.8518_0.5026"  ratioscale="8"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.2854_0.5703" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6406_0.7298"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6406_0.2698" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8518_0.5859" ratioscale="3"/>
+    </gameplay>
+	<gameplay id = "7" name ="part_7" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.2216_0.3183"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.4355_0.2177"  ratioscale="6" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4355_0.4931"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4355_0.7715"  ratioscale="6" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.5966_0.2714"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6015_0.6693"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.8127_0.4931"  ratioscale="6"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.2687_0.6442"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  
+      <obj o_id="0" source= "star" name="star_1" pos="0.4355_0.3834" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4355_0.6751"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7336_0.6598" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.2817_0.7177" ratioscale="3"/>
+    </gameplay>
+	<gameplay id = "8" name ="part_8" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1284_0.7239"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2711_0.4756"  ratioscale="4" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3173_0.2721"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.6123_0.2721"  ratioscale="6" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.7236_0.4902"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5669_0.6474"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.7538_0.6774"  ratioscale="8"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8711_0.6474"  ratioscale="9"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  
+      <obj o_id="0" source= "star" name="star_1" pos="0.3256_0.3832" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4646_0.5266"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.5671_0.7588" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8842_0.7298" ratioscale="3"/>
+    </gameplay>
+	<gameplay id = "9" name ="part_9" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1928_0.75"  	ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.7046_0.75"  	ratioscale="8" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.8046_0.5"  	ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.7046_0.2721"  ratioscale="8" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.5_0.5"  		ratioscale="5"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.1928_0.5"     ratioscale="5"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.1928_0.1816"  ratioscale="8"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  
+      <obj o_id="0" source= "star" name="star_1" pos="0.8046_0.8121" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5708_0.5693"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.4192_0.5693" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.2060_0.2666" ratioscale="3"/>
+    </gameplay>
+	<gameplay id = "10" name ="part_10" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1045_0.3112"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1906_0.3961"  ratioscale="8" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2636_0.4896"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3322_0.5690"  ratioscale="8" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.3965_0.6491"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.4712_0.4121"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6230_0.3457"  ratioscale="8"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8012_0.3496"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.8920_0.5667"  ratioscale="10"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  
+      <obj o_id="0" source= "star" name="star_1" pos="0.3801_0.4720" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.3967_0.7584"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.5149_0.7584" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9055_0.6286" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "11" name ="part_11" des="zz" time ="22" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1506_0.6494"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3056_0.3317"  ratioscale="8" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4743_0.5693"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4743_0.2617"  ratioscale="8" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.6245_0.3317"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5581_0.6458"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.4743_0.5693_2"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.2730_0.6458"  ratioscale="8"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.1506_0.6494_3"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8488_0.4570"  ratioscale="10"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.4743_0.7090" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.3967_0.3317"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.5500_0.3317" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8620_0.5475" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "12" name ="part_12" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.4897_0.3857"  ratioscale="12"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.4922_0.1494"  ratioscale="7" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.1303_0.6624"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.2470_0.4883"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "10" OrbitType = "1" DirectMove = "0_1_0.4" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.3689_0.6624"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.4907_0.6933"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6130_0.6624"  ratioscale="10"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.7495_0.6699"  ratioscale="10"  SpeedRotate = "0" 	SpeedMove = "10" OrbitType = "1" DirectMove = "0_-1_0.4" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.6457_0.2516"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.8838_0.6624"  ratioscale="10"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="10" source= "orbit" name="orbit_10" pos="0.8870_0.4095"  ratioscale="12"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.2492_0.7204" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4914_0.5078"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7488_0.7203" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9004_0.4749" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "13" name ="part_13" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="3" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1435_0.2272"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3198_0.2272"  ratioscale="8" 	 SpeedRotate = "1" 	SpeedMove = "6" OrbitType = "1" DirectMove = "0_1_0.15"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4739_0.2267"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.6343_0.2905"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.7359_0.3398"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.8559_0.6471"  ratioscale="8"   SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6843_0.7329"  ratioscale="8"  SpeedRotate = "1"   SpeedMove = "6" OrbitType = "1" DirectMove = "0_-1_0.15" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.5839_0.6799"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.4198_0.7067"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.3198_0.5780"  ratioscale="10"  SpeedRotate = "1"  SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="10" source= "orbit" name="orbit_10" pos="0.1435_0.7177"  ratioscale="10" SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.3198_0.4459" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6840_0.5264"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.8564_0.7304" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.1567_0.7869" ratioscale="4"/>
+    </gameplay>	
+	<gameplay id = "14" name ="part_14" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.5_0.5416"  ratioscale="12"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1069_0.5416"  ratioscale="12" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.8925_0.5416"  ratioscale="12"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.5_0.2666"  ratioscale="10" 	SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.30345_0.67685"  ratioscale="10"  SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.69625_0.67685"  ratioscale="10" 	SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+        
+      <obj o_id="0" source= "star" name="star_1" pos="0.5_0.8121" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.1069_0.8121"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.8925_0.8121" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.5_0.3551" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "15" name ="part_15" des="zz" time ="23" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.5_0.2578"     ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2094_0.5540"  ratioscale="7" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2094_0.2812"  ratioscale="7"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3935_0.7610"  ratioscale="6" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.3544_0.4746"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.3544_0.2884"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6060_0.7610"  ratioscale="6"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.6450_0.4746"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.6450_0.2884"  ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.7906_0.2812"  ratioscale="7"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="10" source= "orbit" name="orbit_10" pos="0.7906_0.5540" ratioscale="7"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="10" source= "orbit" name="orbit_11" pos="0.5_0.5924"  ratioscale="7"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.2094_0.7392" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5_0.4938"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7906_0.7392" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.5_0.6855" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "16" name ="part_16" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1054_0.6100"  ratioscale="7"  SpeedRotate = "0.8" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2297_0.2780"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.3008_0.3887_3"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3008_0.3887"  ratioscale="9"  SpeedRotate = "0.8" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3716_0.4997"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.3008_0.3887_3"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4255_0.6650"  ratioscale="10"  SpeedRotate = "0.5" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.5000_0.5801_3.5"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5000_0.5801"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.5761_0.4993"  ratioscale="10"  SpeedRotate = "0.8"   SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.5000_0.5801_3.5"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.6282_0.2767"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.6992_0.3873_3"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.6992_0.3873"  ratioscale="9"  SpeedRotate = "0.8"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="9" source= "orbit" name="orbit_9" pos="0.7700_0.4987"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.6992_0.3873_3"/>
+      <obj o_id="10" source= "orbit" name="orbit_10" pos="0.8945_0.6100"  ratioscale="7"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  
+      <obj o_id="0" source= "star" name="star_1" pos="0.3007_0.3063" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.3967_0.5010"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6989_0.3063" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9075_0.7050" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "17" name ="part_17" des="zz" time ="29" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2.5" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.0820_0.3086"  ratioscale="9"  SpeedRotate = "2" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2470_0.6234"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.2539_0.4935_4"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2539_0.4935"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.2580_0.3633"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.2539_0.4935_4"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4375_0.6784"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.4375_0.4935"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.4375_0.2929"  ratioscale="7"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.6894_0.4935"  ratioscale="9"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.9180_0.4935"  ratioscale="9"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.4375_0.7509" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5635_0.3831"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6894_0.7256" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9311_0.5677" ratioscale="4"/>
+    </gameplay>	
+	<gameplay id = "18" name ="part_18" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.0808_0.3275"  ratioscale="10"  SpeedRotate = "2.5" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2519_0.2292"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.3305_0.3066_4"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3305_0.5918"  ratioscale="10"  SpeedRotate = "1.5" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3305_0.3066"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4077_0.3864"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.3305_0.3066_4"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5779_0.3864"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.6689_0.3066_4"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6689_0.3066"  ratioscale="10"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.6689_0.5918"  ratioscale="10"  SpeedRotate = "0.5" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.7644_0.2292"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.6689_0.3066_4"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.9189_0.3275"  ratioscale="10"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  
+      <obj o_id="0" source= "star" name="star_1" pos="0.3305_0.7916" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6689_0.7916"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6689_0.4635" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9323_0.4023" ratioscale="4"/>
+    </gameplay>	
+	<gameplay id = "19" name ="part_19" des="zz" time ="35" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.0854_0.2610"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.0854_0.6224"  ratioscale="9" 	 SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2695_0.6621"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4546_0.2905"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4546_0.6224"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5871_0.5996"  ratioscale="8"   SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.7202_0.5430"  ratioscale="9"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.7202_0.2611"  ratioscale="9"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.9140_0.6836"  ratioscale="9"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.2700_0.7252" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.2700_0.4915"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7195_0.7516" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9277_0.7575" ratioscale="4"/>
+    </gameplay>		
+	<gameplay id = "20" name ="part_20" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.0991_0.4479"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2573_0.4479"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3772_0.3841"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.5161_0.2969"  ratioscale="10" SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.6513_0.4479"  ratioscale="10"  SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.7702_0.7086"  ratioscale="10" SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.7702_0.5820"  ratioscale="10" SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.9009_0.4472"  ratioscale="10" SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+        
+      <obj o_id="0" source= "star" name="star_1" pos="0.0991_0.7031" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.3772_0.4681"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7702_0.6452" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9009_0.5208" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "21" name ="part_21" des="zz" time ="23" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1230_0.3431"     ratioscale="6"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1230_0.6295"  ratioscale="7" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.5410_0.3431"  ratioscale="7"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.7119_0.4915"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.7900_0.6077"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.8823_0.3124"  ratioscale="7"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.3322_0.5306" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6338_0.6826"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7900_0.6826" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8957_0.3770" ratioscale="4"/>
+    </gameplay>	
+	<gameplay id = "22" name ="part_22" des="zz" time ="18" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+	  <obj o_id="0" source= "orbit" name="orbit_0" pos="0.8305_0.2428"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>   		
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2429_0.5765"  ratioscale="10" 	 SpeedRotate = "1" 	SpeedMove = "3" OrbitType = "1" DirectMove = "0_-1_0.15"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3115_0.5765"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3850_0.5765"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "3" OrbitType = "1" DirectMove = "0_1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4716_0.5807"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5434_0.7838"  ratioscale="10"   SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6553_0.4075"  ratioscale="8"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="7" source= "orbit" name="orbit_7" pos="0.7265_0.5667"  ratioscale="10"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.1631_0.5804"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.7270_0.6268" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5434_0.6982"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.3115_0.6318" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.1762_0.6549" ratioscale="4"/>
+    </gameplay>		
+	<gameplay id = "23" name ="part_23" des="zz" time ="34" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.2597_0.4896"  ratioscale="12"  	SpeedRotate = "2.3" 		SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.0840_0.4896"   ratioscale="12" 	SpeedRotate = "2.2" 		SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2597_0.7654"  ratioscale="10"  	SpeedRotate = "0.5" 		SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.2597_0.6245"  ratioscale="10" 	SpeedRotate = "0.5" 		SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4160_0.6946"  ratioscale="10"  	SpeedRotate = "2.1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.4160_0.5110"  ratioscale="12" 	SpeedRotate = "0.3" 	SpeedMove = "5" OrbitType = "1" DirectMove = "1_0_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.4160_0.2727"  ratioscale="12" 	SpeedRotate = "2.3" 		SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.5_0.5892"     ratioscale="12"  	SpeedRotate = "1" 		SpeedMove = "3" OrbitType = "1" DirectMove = "0_1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.5_0.4329"     ratioscale="12" 	SpeedRotate = "0" 		SpeedMove = "3" OrbitType = "1" DirectMove = "0_-1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.5864_0.6946"  ratioscale="10"  	SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="10" source= "orbit" name="orbit_10" pos="0.5864_0.5110"  ratioscale="12" 	SpeedRotate = "0.3" 	SpeedMove = "5" OrbitType = "1" DirectMove = "-1_0_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="11" source= "orbit" name="orbit_11" pos="0.5864_0.2727"  ratioscale="12" 	SpeedRotate = "2.3" 		SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="12" source= "orbit" name="orbit_12" pos="0.7400_0.7654"  ratioscale="12"  	SpeedRotate = "-0.5" 		SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="13" source= "orbit" name="orbit_13" pos="0.7400_0.6245"  ratioscale="12" 	SpeedRotate = "0.5" 		SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="14" source= "orbit" name="orbit_14" pos="0.7400_0.4896"  ratioscale="10"  	SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="15" source= "orbit" name="orbit_15" pos="0.9160_0.4896"  ratioscale="10" 	SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+        
+      <obj o_id="0" source= "star" name="star_1" pos="0.2597_0.6946" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5_0.5"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7400_0.6946" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.7534_0.5547" ratioscale="4"/>
+    </gameplay>
+	
+	<!-- level part 1 -->
+
+	<gameplay id = "24" name ="part_24" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.13_0.6" ratioscale="8"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.5_0.353"  ratioscale="8"  SpeedRotate = "1.8" SpeedMove = "1" OrbitType = "0" DirectMove = "1_0_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.87_0.353" ratioscale="10"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="2" source= "orbit" name="orbit_3" pos="0.87_0.6" ratioscale="8"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	
+      <obj o_id="0" source= "star" name="star_1" pos="0.327_0.5355" ratioscale="8" delta_speed_scale = "0.01" max_scale = "1.75"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5_0.663"  ratioscale="8" delta_speed_scale = "0.015" max_scale = "1.75"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.734_0.5355" ratioscale="8" delta_speed_scale = "0.012" max_scale = "1.75"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.87_0.693" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "25" name ="part_25" des="zz" time ="22" >
+      <valueMain speedRotate="1.2f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1313_0.3040" ratioscale="8"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1853_0.7597"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "2" OrbitType = "0" DirectMove = "0_1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4196_0.4697" ratioscale="8"  SpeedRotate = "1.2"   SpeedMove = "2.5" OrbitType = "0" DirectMove = "0_-1_0.125" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.6660_0.6738"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	  <obj o_id="3" source= "orbit" name="orbit_4" pos="0.8686_0.3916"  ratioscale="8"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+	
+      <obj o_id="0" source= "star" name="star_1" pos="0.2717_0.6406" ratioscale="8" delta_speed_scale = "0.01" max_scale = "1.75"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5446_0.6605"  ratioscale="8" delta_speed_scale = "0.015" max_scale = "1.75"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7607_0.5569" ratioscale="8" delta_speed_scale = "0.012" max_scale = "1.75"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8818_0.4821" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "26" name ="part_26" des="zz" time ="26" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1142_0.5227" ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2797_0.5280" ratioscale="10"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.4116_0.5280_5"/>
+      <obj o_id="1" source= "orbit" name="orbit_2" pos="0.4116_0.5280" ratioscale="10"  SpeedRotate = "1.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>     
+	  <obj o_id="1" source= "orbit" name="orbit_3" pos="0.5483_0.5280" ratioscale="10"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.4116_0.5280_5"/>
+      <obj o_id="1" source= "orbit" name="orbit_4" pos="0.6604_0.3037" ratioscale="8"  SpeedRotate = "1.5" SpeedMove = "2" OrbitType = "0" DirectMove = "0_1_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_5" pos="0.8896_0.3799" ratioscale="9"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+	  
+      <obj o_id="0" source= "star" name="star_1" pos="0.2800_0.5941" ratioscale="9" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5095_0.4539"  ratioscale="9" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7858_0.4030" ratioscale="9" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9035_0.4690" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "27" name ="part_27" des="zz" time ="18" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1635_0.4427" ratioscale="9"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3293_0.6067"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3293_0.3255" ratioscale="8"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4941_0.4427"  ratioscale="9"  SpeedRotate = "1.1" SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.6099_0.4427"  ratioscale="9"  SpeedRotate = "0.5" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.7364_0.4427_2"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.7364_0.4427"  ratioscale="10"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3291_0.4912" ratioscale="6" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4204_0.4427"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6599_0.6012" ratioscale="6" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.7393_0.4984" ratioscale="4"/>
+  </gameplay>   
+	<gameplay id = "28" name ="part_28" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1406_0.5" ratioscale="7"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3_0.6888"  ratioscale="9"  SpeedRotate = "1" SpeedMove = "2" OrbitType = "2" DirectMove = "1_0_0.08" rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3_0.3141" ratioscale="9"  SpeedRotate = "1.2"   SpeedMove = "2" OrbitType = "0" DirectMove = "-1_0_0.08" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4235_0.5"  ratioscale="10"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.5_0.5_1.5"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.58_0.5"  ratioscale="10"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.5_0.5_1.5"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6555_0.6888"  ratioscale="9"  SpeedRotate = "1" SpeedMove = "2" OrbitType = "0" DirectMove = "-1_0_0.08" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6555_0.3141" ratioscale="9"  SpeedRotate = "1.2"   SpeedMove = "2" OrbitType = "2" DirectMove = "1_0_0.08" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_7" pos="0.8615_0.5" ratioscale="10"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3_0.5" ratioscale="6" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6555_0.7488"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6555_0.2541" ratioscale="6" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8747_0.5656" ratioscale="4"/>
+    </gameplay>	
+  <gameplay id = "29" name ="part_29" des="zz" time ="22" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1816_0.3235" ratioscale="8"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.5250_0.2229"  ratioscale="10"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.6005_0.3066_2"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.6005_0.3066" ratioscale="8"  SpeedRotate = "1.2"   SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.8127_0.4984"  ratioscale="8"  SpeedRotate = "1.6" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.7031_0.5"  ratioscale="10"  SpeedRotate = "1" SpeedMove = "2" OrbitType = "1" DirectMove = "0_1_0.18" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6015_0.6263"  ratioscale="8"  SpeedRotate = "1.5" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.3521_0.7766"  ratioscale="10"  SpeedRotate = "0.8" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.2687_0.6367_2"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.2687_0.6367"  ratioscale="10"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.4150_0.2"  ratioscale="8"  SpeedRotate = "1.2" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+     
+      <obj o_id="0" source= "star" name="star_1" pos="0.4328_0.3886" ratioscale="6" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.7031_0.6621"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.4326_0.7200" ratioscale="6" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.2832_0.6907" ratioscale="4"/>
+    </gameplay>
+	<gameplay id = "30" name ="part_30" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1792_0.6862" ratioscale="9"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1792_0.4668"  ratioscale="10"  SpeedRotate = "0.75" SpeedMove = "1" OrbitType = "1" DirectMove = "1_0_0.07"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.1792_0.2747" ratioscale="9"  SpeedRotate = "1.2"   SpeedMove = "1" OrbitType = "0" DirectMove = "-1_0_0.07" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.5713_0.7015"  ratioscale="9"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.5061_0.4668"  ratioscale="9"  SpeedRotate = "0.8" SpeedMove = "0.5" OrbitType = "1" DirectMove = "0_1_0.02" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5061_0.2747"  ratioscale="9"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6613_0.4668"  ratioscale="10"  SpeedRotate = "1.2" SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8144_0.6420" ratioscale="10"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.8144_0.4668"  ratioscale="8"  SpeedRotate = "1" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.8144_0.2747" ratioscale="9"  SpeedRotate = "1.2"   SpeedMove = "1" OrbitType = "0" DirectMove = "1_0_0.05" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.3391_0.3213" ratioscale="7" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.7082_0.7152"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6677_0.3213" ratioscale="7" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.5852_0.7681" ratioscale="4"/>
+    </gameplay> 
+  <gameplay id = "31" name ="part_31" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.0715_0.5651"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2077_0.3825"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "2" OrbitType = "1" DirectMove = "1_0_0.08"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3281_0.5260"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3281_0.2960"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>   
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4861_0.5553"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "1.5" OrbitType = "1" DirectMove = "0_1_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6230_0.4984"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.8010_0.5813"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "1.5" OrbitType = "0" DirectMove = "0_-1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.9167_0.3219"  ratioscale="9"  SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.2080_0.4697" ratioscale="7" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4653_0.6898"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7990_0.8069" ratioscale="7" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9299_0.3884" ratioscale="4"/>
+    </gameplay>  
+  <gameplay id = "32" name ="part_32" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1264_0.6598"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2815_0.3421"  ratioscale="10" SpeedRotate = "-1.8" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4431_0.5869"  ratioscale="10"  SpeedRotate = "1.8" 	SpeedMove = "1" OrbitType = "2" DirectMove = "0_1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.6503_0.3421"  ratioscale="10" SpeedRotate = "1.8" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.8586_0.4658"  ratioscale="10"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.9287_0.3655"  ratioscale="8"  SpeedRotate = "0.8" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.8586_0.4658_2"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3611_0.4603" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4433_0.7194"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.5258_0.4599" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1" pos="0.8725_0.5345" ratioscale="3"/>
+  </gameplay> 
+  <gameplay id = "33" name ="part_33" des="zz" time ="41" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.5066_0.5426"  ratioscale="9"  SpeedRotate = "1.5" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1173_0.4343"  	ratioscale="12" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.2040_0.4343_2" stickOrbitIdx ="2"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2040_0.4343"  	ratioscale="8"  SpeedRotate = "2" 	SpeedMove = "2" OrbitType = "0" DirectMove = "-1_0_0.15" rotate_around_point ="0_0_0" stickOrbitIdx ="-1"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.2912_0.4343"  ratioscale="12" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.2040_0.4343_2" stickOrbitIdx ="2"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.3371_0.6917"  		ratioscale="10"  SpeedRotate = "1.2" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6880_0.6917"     ratioscale="10"  SpeedRotate = "-2.2" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.7163_0.4343"  	ratioscale="12" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.8030_0.4343_2" stickOrbitIdx ="7"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8030_0.4343"  	ratioscale="8"  SpeedRotate = "2" 	SpeedMove = "2" OrbitType = "0" DirectMove = "1_0_0.15" rotate_around_point ="0_0_0" stickOrbitIdx ="-1"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.8896_0.4343"  ratioscale="12" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.8030_0.4343_2" stickOrbitIdx ="7"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.5066_0.2721"  ratioscale="12" 	SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3371_0.6917" ratioscale="7" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5058_0.7929"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6880_0.6917" ratioscale="7" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.5202_0.3362" ratioscale="3"/>
+  </gameplay> 
+  <gameplay id = "34" name ="part_34" des="zz" time ="18" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1045_0.7679"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1753_0.6289"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2758_0.5280"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3762_0.4329"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4687_0.5865"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "1.2" OrbitType = "2" DirectMove = "0_1_0.04" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.4687_0.3281"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "1.2" OrbitType = "2" DirectMove = "0_-1_0.04" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6738_0.4733"  ratioscale="10"  SpeedRotate = "1.2"   SpeedMove = "1" OrbitType = "2" DirectMove = "1_0_0.08" rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.7895_0.4928"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "3" OrbitType = "1" DirectMove = "0_1_0.3" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.9050_0.4834"  ratioscale="10"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3628_0.6168" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4716_0.4567"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.5625_0.4362" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9192_0.5612" ratioscale="4"/>
+  </gameplay> 
+  <gameplay id = "35" name ="part_35" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.2480_0.6110"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2480_0.4749"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "4" OrbitType = "1" DirectMove = "-1_0_0.15"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2480_0.3190"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "1" OrbitType = "2" DirectMove = "1_0_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4707_0.4925"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.6931_0.6110"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6931_0.4749"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "4" OrbitType = "1" DirectMove = "1_0_0.12" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6931_0.3190"  ratioscale="10"  SpeedRotate = "1"   SpeedMove = "1" OrbitType = "2" DirectMove = "-1_0_0.1" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.2480_0.3834" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4707_0.5566"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6931_0.3834" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.6931_0.7018" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "36" name ="part_36" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1172_0.5592"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2070_0.4558"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.2070_0.3099_2" stickOrbitIdx ="2"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2070_0.3099"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.2070_0.1633"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.2070_0.3099_2" stickOrbitIdx ="2"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.5_0.5638"  ratioscale="7"  SpeedRotate = "1" 	SpeedMove = "2" OrbitType = "2" DirectMove = "1_0_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5_0.2610"  ratioscale="7"  SpeedRotate = "1" 	SpeedMove = "2" OrbitType = "2" DirectMove = "-1_0_0.1" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.7930_0.4558"  ratioscale="10"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.7930_0.3099_2" stickOrbitIdx ="7"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.7930_0.3099"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "2" OrbitType = "2" DirectMove = "0_-1_0.14" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.7930_0.1633"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.7930_0.3099_2" stickOrbitIdx ="7"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.9025_0.5592"  ratioscale="8"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3518_0.3532" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5_0.7741"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.8303_0.3977" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9157_0.6372" ratioscale="2"/>
+    </gameplay>  
+  <gameplay id = "37" name ="part_37" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="3" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1240_0.4971"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3965_0.5412"  ratioscale="10" 	 SpeedRotate = "1" 	SpeedMove = "3" OrbitType = "2" DirectMove = "0_1_0.3"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.4919_0.7412"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.5903_0.3431"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.7998_0.4694"  ratioscale="12"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.7998_0.3431_2"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.7998_0.3431"  ratioscale="8"   SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.7998_0.2213"  ratioscale="12"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.7998_0.3431_2"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8896_0.5400"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.5395_0.7906" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6653_0.5094"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.8264_0.5172" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9026_0.6113" ratioscale="2"/>
+  </gameplay>    
+  <gameplay id = "38" name ="part_38" des="zz" time ="20" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1083_0.6992"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3232_0.6992"  ratioscale="12" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.5068_0.6992"  ratioscale="12"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.6904_0.6992"  ratioscale="12" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.3232_0.4909"  ratioscale="12"  SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.3232_0.2825"  ratioscale="12" 	SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.5068_0.4909"  ratioscale="12"  SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.5068_0.2825"  ratioscale="12" 	SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.6904_0.4909"  ratioscale="12"  SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.6904_0.2825"  ratioscale="12" 	SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="10" source= "orbit" name="orbit_10" pos="0.9052_0.2825"  ratioscale="10" 	SpeedRotate = "0.3" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.5_0.8121" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.1069_0.8121"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.8925_0.8121" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9184_0.3519" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "39" name ="part_39" des="zz" time ="23" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1255_0.2754"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1643_0.4326"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "1" OrbitType = "0" DirectMove = "1_0_0.1"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3711_0.5869"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.5678_0.5296"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "1" OrbitType = "0" DirectMove = "0_1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.7055_0.3118"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "1" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.8730_0.4316"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "-1_0_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.8689_0.6624"  ratioscale="9"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.3711_0.5869" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.6184_0.6579"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7990_0.5755" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8820_0.7519" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "40" name ="part_40" des="zz" time ="25" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1255_0.6972"  ratioscale="9"  SpeedRotate = "0.8" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2070_0.3580"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "2" OrbitType = "0" DirectMove = "0_-1_0.07"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3769_0.5540"  ratioscale="10"  SpeedRotate = "0.8" 	SpeedMove = "1.7" OrbitType = "2" DirectMove = "0_1_0.07" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4780_0.2448"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "2.3" OrbitType = "0" DirectMove = "0_-1_0.07" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.5981_0.5305"  ratioscale="10"  SpeedRotate = "0.5" 	SpeedMove = "2.15" OrbitType = "0" DirectMove = "0_1_0.07" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.8711_0.3893"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "1.5" OrbitType = "0" DirectMove = "0_-1_0.02" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.8615_0.6504"  ratioscale="8"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.3139_0.2711" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.3769_0.7734"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7392_0.4270" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8747_0.7386" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "41" name ="part_41" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1157_0.7412"  ratioscale="10"  SpeedRotate = "2.5" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2124_0.6103"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.3047_0.4909_2"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3047_0.4909"  ratioscale="10"  SpeedRotate = "1.5" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4018_0.3672"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.3047_0.4909_2"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.5005_0.2467"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0.0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.8149_0.2467"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "1.15" OrbitType = "0" DirectMove = "0_-1_0.12" rotate_around_point ="0_0.0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6719_0.5859"  ratioscale="10"  SpeedRotate = "1"   SpeedMove = "1.75" OrbitType = "2" DirectMove = "0_1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8713_0.6699"  ratioscale="9"  SpeedRotate = "0.5" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+     
+      <obj o_id="0" source= "star" name="star_1" pos="0.2876_0.7734" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4797_0.5260"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7505_0.7708" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8845_0.7604" ratioscale="4"/>
+  </gameplay>  
+  <gameplay id = "42" name ="part_42" des="zz" time ="29" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2.5" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1152_0.4277"  ratioscale="9"  SpeedRotate = "2" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2048_0.7008"  ratioscale="10" 	SpeedRotate = "1.5" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0.3041_0.5918_2" stickOrbitIdx ="2"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3041_0.5918"  ratioscale="9"  SpeedRotate = "0.85" 	SpeedMove = "1.5" OrbitType = "2" DirectMove = "0_-1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.4712_0.4277"  ratioscale="10" 	SpeedRotate = "1.2" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.6753_0.4225"  ratioscale="9"  SpeedRotate = "1.11" 	SpeedMove = "2" OrbitType = "0" DirectMove = "0_1_0.15" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.8713_0.6045"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.1653_0.7005" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4714_0.6686"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7717_0.5286" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8850_0.6946" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "43" name ="part_43" des="zz" time ="22" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1484_0.5026"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.3242_0.5026"  ratioscale="9" 	 SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.5_0.7109"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.5_0.5026"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.5_0.2682"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6758_0.5026"  ratioscale="8"   SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.8515_0.5026"  ratioscale="9"  SpeedRotate = "0"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+     
+      <obj o_id="0" source= "star" name="star_1" pos="0.3242_0.7548" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.5_0.5026"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6758_0.7548" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8657_0.5918" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "44" name ="part_44" des="zz" time ="30" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.0898_0.2773"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2119_0.5068"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.3081_0.5387"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.2119_0.5068_2"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.3779_0.2923"  ratioscale="10" SpeedRotate = "0.85" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.4853_0.5467"  ratioscale="10"  SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.4853_0.4067"  ratioscale="10"  SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="10" source= "orbit" name="orbit_10" pos="0.6079_0.2923"  ratioscale="10" SpeedRotate = "0.85" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.6052_0.5713"  ratioscale="10" SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.7050_0.5257"  ratioscale="10" SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0.8056_0.4632_2"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8056_0.4632"  ratioscale="10" SpeedRotate = "0.3" SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.9101_0.6676"  ratioscale="10" SpeedRotate = "0" SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.3115_0.6558" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4861_0.4707"  ratioscale="7" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7339_0.6758" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9233_0.7552" ratioscale="4"/>
+  </gameplay>
+  <gameplay id = "45" name ="part_45" des="zz" time ="28" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.0788_0.6881"     ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.0827_0.3984"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2309_0.5875"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "2" OrbitType = "1" DirectMove = "0_1_0.035" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.2309_0.3871"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "2" OrbitType = "1" DirectMove = "0_-1_0.035" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.3794_0.3737"  ratioscale="8"  SpeedRotate = "2.15" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.4370_0.5638"  ratioscale="10"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.5283_0.4717"  ratioscale="10" 	SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.5867_0.5590"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "3" OrbitType = "0" DirectMove = "0_1_0.2" rotate_around_point ="0_0_0"/>
+      <obj o_id="8" source= "orbit" name="orbit_8" pos="0.7424_0.6129"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="9" source= "orbit" name="orbit_9" pos="0.8989_0.5608"  ratioscale="8"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="10" source= "orbit" name="orbit_10" pos="0.8989_0.3004"  ratioscale="7"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+
+      <obj o_id="0" source= "star" name="star_1" pos="0.2314_0.4876" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4800_0.5166"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.9482_0.5667" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9121_0.3674" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "46" name ="part_46" des="zz" time ="23" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1064_0.2936"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.1064_0.5537"  ratioscale="10" SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.2370_0.7174"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.2370_0.5908"  ratioscale="9"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "1" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.3574_0.6506"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="5" source= "orbit" name="orbit_5" pos="0.5039_0.4922"  ratioscale="10"  SpeedRotate = "1" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="6" source= "orbit" name="orbit_6" pos="0.6860_0.3148"  ratioscale="10"  SpeedRotate = "1"   SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="7" source= "orbit" name="orbit_7" pos="0.8935_0.4583"  ratioscale="8"  SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.1067_0.7425" ratioscale="8" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.4875_0.7148"  ratioscale="8" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.6147_0.6722" ratioscale="8" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.9065_0.5465" ratioscale="4"/>
+    </gameplay>
+  <gameplay id = "47" name ="part_47" des="zz" time ="34" >
+      <valueMain speedRotate="1.0f" speedJump="4" scaleRatio="12" speedMove="2" gravityPress="0.4" gravityDelta="0.1"/>
+
+      <obj o_id="0" source= "orbit" name="orbit_0" pos="0.1597_0.2596"  ratioscale="9"  	SpeedRotate = "2.3" 		SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="1" source= "orbit" name="orbit_1" pos="0.2840_0.5296"   ratioscale="9" 	SpeedRotate = "2" 		SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0"  rotate_around_point ="0_0_0"/>
+      <obj o_id="2" source= "orbit" name="orbit_2" pos="0.5297_0.2354"  ratioscale="9"  	SpeedRotate = "0.5" 		SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="3" source= "orbit" name="orbit_3" pos="0.7597_0.5296"  ratioscale="9" 	SpeedRotate = "1.5" 		SpeedMove = "0" OrbitType = "2" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      <obj o_id="4" source= "orbit" name="orbit_4" pos="0.8860_0.2596"  ratioscale="9"  	SpeedRotate = "0" 	SpeedMove = "0" OrbitType = "0" DirectMove = "0_0_0" rotate_around_point ="0_0_0"/>
+      
+      <obj o_id="0" source= "star" name="star_1" pos="0.1597_0.5546" ratioscale="10" delta_speed_scale = "0.007" max_scale = "1.5"/>
+      <obj o_id="1" source= "star" name="star_2" pos="0.2840_0.7765"  ratioscale="10" delta_speed_scale = "0.008" max_scale = "1.5"/>
+      <obj o_id="2" source= "star" name="star_3" pos="0.7597_0.7765" ratioscale="10" delta_speed_scale = "0.009" max_scale = "1.5"/>
+
+      <obj o_id="1" source= "flag" name="flag_1"   pos="0.8860_0.3096" ratioscale="4"/>
+    </gameplay>
+
+
+  </GamePlay>
+	
+</GAME>

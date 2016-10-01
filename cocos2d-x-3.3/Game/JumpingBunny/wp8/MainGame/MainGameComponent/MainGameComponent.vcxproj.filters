@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{ebfae752-00fd-4f6a-ac89-7f565a8a5a52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode">
+      <UniqueIdentifier>{2237f71b-6a70-4d9c-ad00-aaab8350e6fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Init">
+      <UniqueIdentifier>{7018b328-c897-47a1-9d7f-c6a3c62f45b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Background">
+      <UniqueIdentifier>{b55f358b-bcea-432d-b3ce-0c1dde21e46b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Control">
+      <UniqueIdentifier>{680dfa08-3d37-4327-b536-e06aed3ccf88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\GamePlay">
+      <UniqueIdentifier>{fbe50b23-bc3c-4a1c-b4ed-31d78e0bedd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Menu">
+      <UniqueIdentifier>{82592169-6f45-4ab2-a727-c01aa45e1f81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Utility">
+      <UniqueIdentifier>{4c62f07c-5fe3-4b3f-9703-5418dcc78163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Social">
+      <UniqueIdentifier>{871e27fd-6e60-47c3-8f25-1017deaf09db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Social\App42">
+      <UniqueIdentifier>{df352679-4a7c-4798-9cd1-5763e67af07f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Social\DownloadManager">
+      <UniqueIdentifier>{7f05628f-d996-480c-b5cf-c1241207d59d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\Particle">
+      <UniqueIdentifier>{5cc44e04-3b06-4aa4-835d-7bc19615fff6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameCode\FXFlatform">
+      <UniqueIdentifier>{f01a0612-fe0d-4e79-8705-8bec95fbbb2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(AngleBinPath)libEGL_phone.dll" />
+    <None Include="$(AngleBinPath)libGLESv2_phone.dll" />
+    <None Include="$(WebsocketsBinPath)libwebsockets.dll" />
+    <None Include="$(SQLiteBinPath)sqlite3.dll" />
+    <None Include="$(CurlBinPath)libcurl.dll" />
+    <None Include="$(CurlBinPath)libeay32.dll" />
+    <None Include="$(CurlBinPath)ssleay32.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cocos2dRenderer.cpp" />
+    <ClCompile Include="Direct3DContentProvider.cpp" />
+    <ClCompile Include="Direct3DInterop.cpp" />
+    <ClCompile Include="DirectXBase.cpp" />
+    <ClCompile Include="EditBoxEvent.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="..\..\..\SourceGame\Init\AppDelegate.cpp">
+      <Filter>GameCode\Init</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Init\DisplayView.cpp">
+      <Filter>GameCode\Init</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\MainSceneGame.cpp">
+      <Filter>GameCode\Init</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Background\BGObject.cpp">
+      <Filter>GameCode\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Background\CloudObject.cpp">
+      <Filter>GameCode\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Background\ObjectBGEntity.cpp">
+      <Filter>GameCode\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Control\InputManager.cpp">
+      <Filter>GameCode\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\GamePlay\APManager.cpp">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\GamePlay\EntityObject.cpp">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\GamePlay\MainCharacterObject.cpp">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\GamePlay\ManageObjectAP.cpp">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\GamePlay\OrbitObject.cpp">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\BoostMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\HUDMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\IAPMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\IGM.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\InfoMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\MainMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\MenuEntity.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\MenuManager.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\OptionsMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\PopUpMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\ResultMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Utility\BoostManager.cpp">
+      <Filter>GameCode\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Utility\FileManager.cpp">
+      <Filter>GameCode\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Utility\IAPManager.cpp">
+      <Filter>GameCode\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Utility\LoadDataXML.cpp">
+      <Filter>GameCode\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Utility\ObjectTexture.cpp">
+      <Filter>GameCode\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\LeaderBoardMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Social\App42\FacebookProfile.cpp">
+      <Filter>GameCode\Social\App42</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Social\App42\CoreAPI.cpp">
+      <Filter>GameCode\Social\App42</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Social\DownloadManager\DownloadHandler.cpp">
+      <Filter>GameCode\Social\DownloadManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Social\SocialManager.cpp">
+      <Filter>GameCode\Social</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Social\App42\LeaderboardManager.cpp">
+      <Filter>GameCode\Social\App42</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Particle\ParticleManager.cpp">
+      <Filter>GameCode\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Utility\SoundManager.cpp">
+      <Filter>GameCode\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\FXFlatform\XFlatform.cpp">
+      <Filter>GameCode\FXFlatform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\GamePlaySelection.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SourceGame\Menu\LevelSelectionMenu.cpp">
+      <Filter>GameCode\Menu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cocos2dRenderer.h" />
+    <ClInclude Include="Direct3DContentProvider.h" />
+    <ClInclude Include="Direct3DInterop.h" />
+    <ClInclude Include="DirectXBase.h" />
+    <ClInclude Include="DirectXHelper.h" />
+    <ClInclude Include="EditBoxEvent.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="..\..\..\SourceGame\Init\AppDelegate.h">
+      <Filter>GameCode\Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Init\AppMacros.h">
+      <Filter>GameCode\Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Init\DisplayView.h">
+      <Filter>GameCode\Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Init\ParamTexture.h">
+      <Filter>GameCode\Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\MainSceneGame.h">
+      <Filter>GameCode\Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Background\BGObject.h">
+      <Filter>GameCode\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Background\CloudObject.h">
+      <Filter>GameCode\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Background\ObjectBGEntity.h">
+      <Filter>GameCode\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Control\InputManager.h">
+      <Filter>GameCode\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\GamePlay\APManager.h">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\GamePlay\EntityObject.h">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\GamePlay\MainCharacterObject.h">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\GamePlay\ManageObjectAP.h">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\GamePlay\OrbitObject.h">
+      <Filter>GameCode\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\BoostMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\HUDMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\IAPMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\IGM.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\InfoMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\MainMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\MenuEntity.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\MenuManager.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\OptionsMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\PopUpMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\ResultMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Utility\BoostManager.h">
+      <Filter>GameCode\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Utility\FileManager.h">
+      <Filter>GameCode\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Utility\IAPManager.h">
+      <Filter>GameCode\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Utility\LoadDataXML.h">
+      <Filter>GameCode\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Utility\ObjectTexture.h">
+      <Filter>GameCode\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\LeaderBoardMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Social\App42\FacebookProfile.h">
+      <Filter>GameCode\Social\App42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Social\App42\CoreAPI.h">
+      <Filter>GameCode\Social\App42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Social\DownloadManager\DownloadHandler.h">
+      <Filter>GameCode\Social\DownloadManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Social\SocialManager.h">
+      <Filter>GameCode\Social</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Social\App42\LeaderboardManager.h">
+      <Filter>GameCode\Social\App42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Particle\ParicleManager.h">
+      <Filter>GameCode\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Utility\SoundManager.h">
+      <Filter>GameCode\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\FXFlatform\XFlatform.h">
+      <Filter>GameCode\FXFlatform</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicTimer.h" />
+    <ClInclude Include="..\..\..\SourceGame\Menu\GamePlaySelection.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SourceGame\Menu\LevelSelectionMenu.h">
+      <Filter>GameCode\Menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

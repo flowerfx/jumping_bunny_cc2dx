@@ -1,0 +1,404 @@
+<GAME>
+	<texture number="3">
+		<tex0 id="0" namepath="Texture\UI\Button0.png">
+			<button id="0" name="PlayBtn" 	rect="0-0-250-250"/>
+			<button id="1" name="OptionBtn" rect="255-0-250-250"/>
+			<button id="2" name="BoostBtn" 	rect="510-0-250-250"/>
+			<button id="3" name="SoundBtn" 	rect="765-0-250-250"/>
+			<button id="4" name="MenuBtn" 	rect="0-255-250-250"/>
+			<button id="5" name="CloseBtn"  rect="255-255-250-250"/>
+			<button id="6" name="ShopBtn" 	rect="510-255-250-250"/>
+			<button id="7" name="PauseBtn" 	rect="765-255-250-250"/>
+			<button id="8" name="ContinueBtn" 	rect="0-510-250-250"/>
+			<button id="9" name="InfoBtn" rect="255-510-250-250"/>
+			<button id="10" name="OKBtn" rect="510-510-250-250"/>
+			<button id="11" name="ReloadBtn" rect="765-510-250-250"/>
+			<button id="12" name="leaderboardBtn" 	rect="0-765-250-250"/>
+			<button id="13" name="RateBtn" 	rect="255-765-250-250"/>
+			
+			<button id="14" name="Button1" 	rect="698-764-326-126"/>			
+			<button id="15" name="Button2"  rect="698-900-326-126"/>
+			<button id="16" name="TimePlayBtn"  rect="508-764-184-194"/>
+		</tex0>
+		<tex1 id="1" namepath="Texture\UI\Menu0.png">
+			<button id="0" name="BackgroundTrans" 	rect="0-0-800-324"/>
+			<button id="2" name="LargePopUp" 	rect="804-0-736-440"/>
+			<button id="3" name="SqurePopUp" 	rect="1544-0-380-320"/>
+			<button id="4" name="WidePopUp" 	rect="810-444-760-160"/>
+			<button id="5" name="Panel2" rect="0-328-300-360"/>
+			<button id="6" name="Panel1" 	rect="304-328-292-460"/>
+			<!--
+			<button id="7" name="Button1" 	rect="0-792-450-156"/>
+			<button id="8" name="Button2" 	rect="0-952-450-156"/>
+			-->
+			<button id="9" name="Panel4" rect="600-328-200-254"/>
+			<button id="10" name="PanelBig" rect="810-608-720-400"/>
+			<button id="11" name="Background" 	rect="0-1548-838-500"/>
+			<button id="13" name="BackgroundHorizon" 	rect="842-1578-210-470"/>
+			<button id="14" name="BigCloud0" 	rect="1316-1388-732-238"/>
+			<button id="15" name="BigCloud1" 	rect="1056-1746-730-302"/>
+			<button id="16" name="MedCloud0" 	rect="248-1380-270-154"/>
+			<button id="17" name="MedCloud1" 	rect="0-1370-244-166"/>
+			<button id="18" name="SmallCloud0" 	rect="940-1460-152-88"/>
+			<button id="19" name="SmallCloud1" 	rect="1100-1456-168-100"/>
+			<button id="20" name="WideCloud0" 	rect="1508-1630-540-84"/>
+			<button id="21" name="WideCloud1" 	rect="1508-1630-540-84"/>
+			<button id="22" name="BGCloud1" 	rect="530-1350-400-186"/>
+			<button id="23" name="BGCloud2" 	rect="1056-1630-400-110"/>
+			<button id="24" name="PanelIGM" 	rect="0-1112-736-194"/>
+			<button id="25" name="EmptyBG" 	rect="1848-1848-200-200"/>
+			<button id="26" name="PanelGOLD" rect="460-792-188-64"/>
+			<button id="27" name="starGOLD" rect="610-600-140-110"/>
+			<button id="28" name="iconSmallPack" rect="610-948-110-110"/>
+			<button id="29" name="iconMedPack" rect="742-1030-110-110"/>
+			<button id="30" name="iconLargePack" rect="750-1150-120-120"/>
+			<button id="31" name="smalPanel" rect="460-948-144-76"/>
+			<button id="32" name="icon_gravity" rect="874-1024-125-130"/>
+			<button id="33" name="icon_jump" rect="1010-1030-135-125"/>
+			<button id="34" name="icon_life" rect="1412-1024-144-146"/>
+			<button id="35" name="panel_boost_IG" rect="460-862-266-64"/>
+			<button id="36" name="ScoreboardPanel" rect="1574-324-474-480"/>
+			<button id="37" name="player_panel_score" rect="1540-812-348-70"/>
+			<button id="40" name="player_panel_seft" rect="1540-892-344-46"/>
+			<button id="41" name="profile_bar" rect="1562-1030-290-86"/>
+			<button id="42" name="online_ring_fb" rect="1696-1130-110-110"/>
+			<button id="43" name="offline_ring_fb" rect="1570-1130-110-110"/>
+			<button id="44" name="fb_btn" rect="1414-1176-146-146"/>
+			<button id="45" name="fb_share_btn" rect="1570-1248-100-100"/>
+			<button id="46" name="banner_remove_ads" rect="1162-1024-74-74"/>
+			<button id="47" name="mute_sound" rect="1256-1024-88-88"/>
+			<button id="48" name="boost_dec_1" rect="940-1168-160-258"/>
+			<button id="49" name="boost_dec_2" rect="1108-1168-166-258"/>
+			<button id="50" name="boost_dec_3" rect="1884-1128-160-258"/>
+			<button id="51" name="btn_move_level" rect="0-704-64-148"/>
+			<button id="52" name="bg_lock_level" rect="200-702-100-100"/>
+			<button id="53" name="bg_3_star" rect="76-702-118-40"/>
+			<button id="54" name="bg_2_star" rect="76-752-118-40"/>
+			<button id="55" name="bg_1_star" rect="76-804-118-40"/>
+			<button id="56" name="bg_0_star" rect="76-854-118-40"/>
+		  <button id="57" name="Big_star" rect="200-808-156-156"/>
+		  <button id="58" name="Big_black_star" rect="0-906-156-156"/>
+		  <button id="59" name="flag" rect="1696-1244-104-136"/>
+		  <button id="60" name="btn_gamecenter_lb" rect="1968-160-78-80"/>
+		  <button id="61" name="btn_fb_lb" rect="1970-84-74-72"/>
+		  <button id="62" name="btn_global_lb" rect="1968-0-78-80"/>
+		</tex1>
+    <tex2 id="2" namepath="Texture\GamePlay\Atlas.png">
+			<button id="0" name="0_6" 	rect="1518-1998-42-50"/>
+			<button id="1" name="1_6" 	rect="1580-2000-28-48"/>
+			<button id="2" name="2_6" 	rect="1626-1998-42-48"/>
+			<button id="3" name="3_6" 	rect="1682-1998-40-50"/>
+			<button id="4" name="4_6" 	rect="1734-2000-42-48"/>
+			<button id="5" name="5_6" 	rect="1790-2000-40-48"/>
+			<button id="6" name="6_6" 	rect="1842-2000-42-48"/>
+			<button id="7" name="7_6" 	rect="1898-2000-40-48"/>
+			<button id="8" name="8_6" 	rect="1952-2000-42-50"/>
+			<button id="9" name="9_6" 	rect="2006-2000-42-48"/>
+			
+			<button id="10" name="0_3" 	rect="1616-1938-46-54"/>
+			<button id="11" name="1_3" 	rect="1664-1938-34-54"/>
+			<button id="12" name="2_3" 	rect="1702-1936-46-54"/>
+			<button id="13" name="3_3" 	rect="1750-1936-44-56"/>
+			<button id="14" name="4_3" 	rect="1796-1938-42-54"/>
+			<button id="15" name="5_3" 	rect="1840-1938-40-52"/>
+			<button id="16" name="6_3" 	rect="1880-1936-40-54"/>
+			<button id="17" name="7_3" 	rect="1922-1936-40-54"/>
+			<button id="18" name="8_3" 	rect="1962-1936-42-54"/>
+			<button id="19" name="9_3" 	rect="2006-1936-42-54"/>
+			
+			<button id="20" name="0_0" 	rect="1636-1884-46-54"/>
+			<button id="21" name="1_0" 	rect="1678-1884-30-44"/>
+			<button id="22" name="2_0" 	rect="1720-1886-30-42"/>
+			<button id="23" name="3_0" 	rect="1762-1886-30-42"/>
+			<button id="24" name="4_0" 	rect="1804-1886-30-42"/>
+			<button id="25" name="5_0" 	rect="1844-1886-30-42"/>
+			<button id="26" name="6_0" 	rect="1886-1886-30-44"/>
+			<button id="27" name="7_0" 	rect="1928-1886-32-44"/>
+			<button id="28" name="8_0" 	rect="1970-1886-34-44"/>
+			<button id="29" name="9_0" 	rect="2015-1886-30-44"/>
+			
+		</tex2>	
+	</texture>
+	<menu>
+		<UI name="main" deltatime = "0" distanceMoveDir = "0_0">			
+			<resource id="1" typeRes="font"   name="Text0" source="0" pos="0.6925_0.848" scale="25_25" rotate ="0" dirmove="0_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="2" typeRes="Button" name = "PlayBtn" source="PlayBtn" 		pos="0.5_0.5" scale="0.293_0.293" rotate ="0" dirmove="0_0"/>
+			<resource id="3" typeRes="Button" name = "OptionBtn" source="OptionBtn" 		pos="0.195_0.5" scale="0.195_0.195" rotate ="0" dirmove="0_0"/>
+			<resource id="4" typeRes="Button" name = "leaderboardBtn" source="leaderboardBtn" pos="0.805_0.5" scale="0.195_0.195" rotate ="0" dirmove="0_0"/>
+			<resource id="5" typeRes="Button" name = "BoostBtn" source="BoostBtn" 		pos="0.905_0.848" scale="0.127_0.127" rotate ="0" dirmove="0_0"/>
+			<resource id="6" typeRes="Button" name = "ShopBtn" source="ShopBtn" 		pos="0.806_0.848" scale="0.127_0.127" rotate ="0" dirmove="0_0"/>
+			<resource id="7" typeRes="Background" name = "star_gold" source="starGOLD" pos="0.6025_0.848" scale="0.06625_0.0925" rotate ="0" dirmove="0_0"/>
+			<resource id="8" typeRes="Background" name = "bg_gold" source="PanelGOLD" pos="0.6925_0.848" scale="0.2425_0.11125" rotate ="0" dirmove="0_0"/>
+			<resource id="9" typeRes="Background" name = "profile_bar" source="profile_bar" pos="0.2025_0.104166" scale="0.3625_0.179166" rotate ="0" dirmove="0_0"/>
+			<resource id="10" typeRes="font"   name="Text1" source="Welcome" pos="0.2_0.04875" scale="25_25" rotate ="0" dirmove="0_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="11" typeRes="font"   name="Text2" source="..." pos="0.225_0.12916" scale="20_20" rotate ="0" dirmove="0_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "5"/>			
+			<resource id="0" typeRes="Background" name = "BackgroundTrans" source="BackgroundTrans" pos="0.5_0.5" scale="1_0.677" rotate ="0" dirmove="0_0"/>
+		</UI>
+		<UI name="option" deltatime = "30" distanceMoveDir = "0.2250_0">
+			<resource id="0" typeRes="Background" name = "BackgroundHorizon" source="BackgroundHorizon" pos="0.1125_0.5" scale="0.25_1" rotate ="0" dirmove="1_0"/>
+			<resource id="1" typeRes="Button" name = "SoundBtn" source="SoundBtn" 		pos="0.05625_0.1125" scale="0.14625_0.14625" rotate ="0" dirmove="1_0"/>
+			<resource id="2" typeRes="Button" name = "InfoBtn" source="InfoBtn" 		pos="0.175_0.1125" scale="0.14625_0.14625" rotate ="0" dirmove="1_0"/>
+			<resource id="5" typeRes="Button" name = "fb_btn" source="fb_btn" pos="0.1125_0.4" scale="0.342465_0.342465" rotate ="0" dirmove="1_0"/>
+			<resource id="3" typeRes="Button" name = "RateBtn" source="RateBtn" pos="0.1125_0.7" scale="0.195_0.195" rotate ="0" dirmove="1_0"/>
+			<resource id="4" typeRes="Button" name = "BackBtn" source="CloseBtn" pos="0.2250_0.848" scale="0.1056_0.1056" rotate ="0" dirmove="1_0"/>
+			<resource id="5" typeRes="SpecificBG" name = "online_ring_fb" source="online_ring_fb" pos="0.1125_0.4" scale="0.136_0.229" rotate ="0" dirmove="1_0"/>
+			<resource id="6" typeRes="SpecificBG" name = "offline_ring_fb" source="offline_ring_fb" pos="0.1125_0.4" scale="0.136_0.229" rotate ="0" dirmove="1_0"/>
+			<resource id="7" typeRes="SpecificBG" name = "mute_sound" source="mute_sound" pos="0.05625_0.1125" scale="0.11_0.1833" rotate ="0" dirmove="1_0"/>
+		</UI>
+		<UI name="leaderboardMenu" deltatime = "20" distanceMoveDir = "0.625_0">
+			<resource id="0" typeRes="Background" name = "ScorePanel" source="ScoreboardPanel" pos="0.705_0.5" scale="0.5925_1" rotate ="0" dirmove="-1_0"/>
+			<resource id="1" typeRes="Background" name = "no_1_panel" source="player_panel_score"  	pos="0.75_0.21875" scale="0.435_0.14583" rotate ="0" dirmove="-1_0"/>
+			<resource id="2" typeRes="Background" name = "no_2_panel" source="player_panel_score" 	pos="0.75_0.36875" scale="0.435_0.14583" rotate ="0" dirmove="-1_0"/>
+			<resource id="3" typeRes="Background" name = "no_3_panel" source="player_panel_score" 	pos="0.75_0.51875" scale="0.435_0.14583" rotate ="0" dirmove="-1_0"/>
+			<resource id="5" typeRes="Background" name = "no_4_panel" source="player_panel_score" 	pos="0.75_0.66875" scale="0.435_0.14583" rotate ="0" dirmove="-1_0"/>
+			<resource id="6" typeRes="Background" name = "seft_panel" source="player_panel_seft" pos="0.75_0.90833" scale="0.435_0.11458" rotate ="0" dirmove="-1_0"/>
+			<resource id="7" typeRes="Button" name = "BackBtn" source="CloseBtn" pos="0.4275_0.9125" scale="0.125_0.125" rotate ="0" dirmove="-1_0"/>
+			<resource id="7" typeRes="Button" name = "btn_global" source="btn_global_lb" pos="0.4225_0.11458" scale="0.5_0.5" rotate ="0" dirmove="-1_0"/>
+			<resource id="7" typeRes="Button" name = "btn_facebook" source="btn_fb_lb" pos="0.41125_0.3073" scale="0.5_0.5" rotate ="0" dirmove="-1_0"/>
+			<resource id="7" typeRes="Button" name = "btn_gamecenter" source="btn_gamecenter_lb" pos="0.41125_0.3073" scale="0.5_0.5" rotate ="0" dirmove="-1_0"/>
+      <!-- title -->
+			<resource id="8" typeRes="font"   name="Text0" source="TOP PLAYER SCOREs" pos="0.67625_0.12083" scale="25_25" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "0"/>	
+			<resource id="9" typeRes="font"   name="Text1" source="YOUR BEST SCORE" pos="0.6675_0.810416" scale="25_25" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "0"/>			
+		  <!--
+      <resource id="6" typeRes="font"   name="Text2" source="TOP FRIEND SCOREs" pos="0.67625_0.12083" scale="25_25" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "0"/>	
+      -->
+      <!-- detail score 1-->
+			<resource id="9" typeRes="font"   name="Text3" source="I" pos="0.5675_0.21875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "0"/>	
+			<resource id="9" typeRes="font"   name="Text4" source="..." pos="0.68_0.21875" scale="18_18" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "5"/>			
+			<resource id="9" typeRes="font"   name="Text5" source="..." pos="0.815_0.21875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "1"/>		
+      <!-- detail score 2-->
+			<resource id="10" typeRes="font"   name="Text6" source="II" pos="0.5675_0.36875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "0"/>	
+			<resource id="10" typeRes="font"   name="Text7" source="..." pos="0.68_0.36875" scale="18_18" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "5"/>			
+			<resource id="10" typeRes="font"   name="Text8" source="..." pos="0.815_0.36875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "1"/>
+      <!-- detail score 3-->
+			<resource id="11" typeRes="font"   name="Text9" source="III" pos="0.5675_0.51875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "0"/>	
+			<resource id="11" typeRes="font"   name="Text10" source="..." pos="0.68_0.51875" scale="18_18" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "5"/>			
+			<resource id="11" typeRes="font"   name="Text11" source="..." pos="0.815_0.51875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "1"/>		
+      <!-- detail score 4-->
+			<resource id="12" typeRes="font"   name="Text12" source="IV" pos="0.5675_0.66875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "0"/>	
+			<resource id="12" typeRes="font"   name="Text13" source="..." pos="0.68_0.66875" scale="18_18" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "5"/>			
+			<resource id="12" typeRes="font"   name="Text14" source="..." pos="0.815_0.66875" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "1"/>
+      <!-- seft score-->
+			<resource id="13" typeRes="font"   name="Text15" source="..." pos="0.6475_0.90833" scale="18_18" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "5"/>			
+			<resource id="13" typeRes="font"   name="Text16" source="..." pos="0.8275_0.90833" scale="20_20" rotate ="0" dirmove="-1_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="0.5" fontIdx = "1"/>
+      
+			<resource id="8" typeRes="Background"  name="EmptyBG"  source="EmptyBG" pos="0.5_0.5" scale="4_4" rotate ="0" dirmove="0_0"/>	  			
+		</UI>
+		<UI name="info" deltatime = "20" distanceMoveDir = "0_0.96">
+			<resource id="0" typeRes="Background" name="LargePopUp" source="LargePopUp" pos="0.5_0.52" scale="0.8_0.85" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="Button" name="OKBtn" source="OKBtn" 		pos="0.7575_0.9234" scale="0.1272_0.1272" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="font"   name="Text0" source="FLOWERFX SOFTWARE" pos="0.405_0.2625" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="-3" fontIdx = "1"/>
+			<resource id="3" typeRes="font"   name="Text1" source="Design And Develop:" pos="0.392_0.3416" scale="22_22" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="-3" fontIdx = "1"/>
+			<resource id="4" typeRes="font"   name="Text11" source="Chien.TruongQuoc" pos="0.55_0.4166" scale="25_25" rotate ="0" dirmove="0_-1" color="57_100_239_255" colorborder="255_255_255_255" borderwd="-3" fontIdx = "3"/>
+			<resource id="5" typeRes="font"   name="Text2" source="Email:" pos="0.32_0.4958" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="-3" fontIdx = "1"/>
+			<resource id="6" typeRes="font"   name="Text21" source="qchien.gl@hotmail.com" pos="0.55_0.5625" scale="25_25" rotate ="0" dirmove="0_-1" color="57_100_239_255" colorborder="255_255_255_255" borderwd="-3" fontIdx = "3"/>
+			<resource id="7" typeRes="font"   name="Text3" source="Version:" pos="0.32_0.7916" scale="16_16" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="-3" fontIdx = "1"/>
+			<resource id="8" typeRes="font"   name="Text31" source="1.0.0.1" pos="0.39_0.7916" scale="18_18" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="-3" fontIdx = "1"/>
+			<resource id="9" typeRes="Background" name="EmptyBG" source="EmptyBG" pos="0.5_0.5" scale="4_4" rotate ="0" dirmove="0_0"/>			
+		</UI>
+		<UI name="HUD" deltatime = "20" distanceMoveDir = "0_0.18334">
+			<resource id="0" typeRes="Button" name="PauseBtn" source="PauseBtn" pos="0.055_0.09167" scale="0.14_0.14" rotate ="0" dirmove="0_1"/>
+			<resource id="1" typeRes="Button" name="BoostBtn" source="BoostBtn" 		pos="0.9375_0.9166" scale="0.14_0.14" rotate ="0" dirmove="0_-1"/>			
+			<resource id="3" typeRes="font"   name="Text0" source="0" pos="0.9025_0.04167" scale="30_30" rotate ="0" dirmove="0_1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="2" typeRes="font"   name="Text1" source="SCORE" pos="0.78125_0.04167" scale="25_25" rotate ="0" dirmove="0_1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="4" typeRes="font"   name="Text_gra_num" source="0" pos="0.8475_0.9" scale="20_20" rotate ="0" dirmove="0_-1" color="255_124_60_255" colorborder="0_0_0_255" borderwd="2" fontIdx = "2"/>			
+			<resource id="4" typeRes="Background"   name="icon_gravity" source="icon_gravity" pos="0.81875_0.93" scale="0.0525_0.09375" rotate ="0" dirmove="0_-1"/>
+			<resource id="5" typeRes="font"   name="Text_jump_num" source="0" pos="0.76625_0.9" scale="20_20" rotate ="0" dirmove="0_-1" color="255_124_60_255" colorborder="0_0_0_255" borderwd="2" fontIdx = "2"/>			
+			<resource id="5" typeRes="Background"   name="icon_jump" source="icon_jump" pos="0.7375_0.93" scale="0.058125_0.090625" rotate ="0" dirmove="0_-1"/>
+			<resource id="6" typeRes="font"   name="Text_life_num" source="0" pos="0.685_0.9" scale="20_20" rotate ="0" dirmove="0_-1" color="255_124_60_255" colorborder="0_0_0_255" borderwd="2" fontIdx = "2"/>			
+			<resource id="6" typeRes="Background"   name="icon_life" source="icon_life" pos="0.65625_0.93" scale="0.05625_0.09375" rotate ="0" dirmove="0_-1"/>
+			<resource id="7" typeRes="Background"   name="backPanel" source="panel_boost_IG" pos="0.7375_0.93" scale="0.3325_0.085" rotate ="0" dirmove="0_-1"/>
+			<resource id="8" typeRes="font"   name="Text3" source="Score On Board" pos="0.13_0.89417" scale="20_20" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="242_191_94_255" borderwd="1" fontIdx = "2"/>
+			<resource id="9" typeRes="font"   name="Text4" source="#" pos="0.115_0.9583" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="242_191_94_255" borderwd="1" fontIdx = "2"/>
+			<resource id="9" typeRes="font"   name="Text5" source="0" pos="0.175_0.9583" scale="28_28" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="2" fontIdx = "2"/>						
+			<resource id="10" typeRes="Background"   name="panel_board" source="smalPanel" pos="0.1475_0.979" scale="0.265_0.1583" rotate ="0" dirmove="0_-1"/>
+      <resource id="9" typeRes="font"   name="Text_count_down" source="00:00" pos="0.5_0.1" scale="35_35" rotate ="0" dirmove="0_1" color="255_255_255_255" colorborder="176_201_239_255" borderwd="2" fontIdx = "3"/>
+
+
+    </UI>
+		<UI name="IGM" deltatime = "20" distanceMoveDir = "0_1">
+			<resource id="0" typeRes="Button" name="ReloadBtn" source="ReloadBtn" pos="0.2525_0.5" scale="0.1957_0.1957" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="Button" name="ContinueBtn" source="ContinueBtn" 		pos="0.415_0.5" scale="0.1957_0.1957" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Button" name="MenuBtn"   source="MenuBtn" pos="0.58_0.5" scale="0.1957_0.1957" rotate ="0" dirmove="0_-1"/>
+			<resource id="3" typeRes="Button" name="SoundBtn"   source="SoundBtn" pos="0.75_0.5" scale="0.1957_0.1957" rotate ="0" dirmove="0_-1"/>
+			<resource id="4" typeRes="font"   name="Text0" source="GAME PAUSE !" pos="0.1915_0.3167" scale="30_30" rotate ="-4.45" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>			
+			<resource id="5" typeRes="Background"  name="PanelIGM"  source="PanelIGM" pos="0.5_0.5" scale="0.92_0.40416" rotate ="0" dirmove="0_-1"/>
+			<resource id="6" typeRes="Background"  name="EmptyBG"  source="EmptyBG" pos="0.5_0.5" scale="4_4" rotate ="0" dirmove="0_0"/>
+			<resource id="7" typeRes="SpecificBG" name = "mute_sound" source="mute_sound" pos="0.75_0.5" scale="0.11_0.1833" rotate ="0" dirmove="0_-1"/>
+		</UI>
+		<UI name="ResultMenu" deltatime = "20" distanceMoveDir = "0_1">
+			<resource id="0" typeRes="Button" name="ReloadBtn" source="ReloadBtn" pos="0.345_0.8125" scale="0.1957_0.1957" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="Button" name="MenuBtn" source="MenuBtn" 		pos="0.49375_0.8125" scale="0.1957_0.1957" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Button" name="fb_btn" source="fb_share_btn" pos="0.64_0.8125" scale="0.5_0.5" rotate ="0" dirmove="0_-1"/>
+			<resource id="3" typeRes="font"   name="Text0" source="SCORE:" pos="0.3475_0.3958" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="4" typeRes="font"   name="Text1" source="HIGH SCORE:" pos="0.41375_0.5167" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="5" typeRes="font"   name="Text2" source="0" pos="0.5875_0.3958" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="6" typeRes="font"   name="Text3" source="0" pos="0.5875_0.5167" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="7" typeRes="font"   name="Text4" source="OPS ! YOU LOSE" pos="0.4_0.1833" scale="35_35" rotate ="-6.89" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="2.5" fontIdx = "0"/>
+			<resource id="8" typeRes="Background"   name="SqurePopUp" source="SqurePopUp" pos="0.5_0.5" scale="0.5725_0.675" rotate ="0" dirmove="0_-1"/>			
+			<resource id="9" typeRes="Background"   name="EmptyBG"    source="EmptyBG"     pos="0.5_0.5" scale="4_4" rotate ="0" dirmove="0_0"/>
+      <resource id="10" typeRes="Background"   name="w_star_1"        source="Big_star"       pos="0.35125_0.4125" scale="0.14625_0.24375"  rotate ="-15" dirmove="0_-1"/>
+      <resource id="11" typeRes="Background"   name="t_star_black_1"  source="Big_black_star" pos="0.35125_0.4125" scale="0.14625_0.24375"           rotate ="-15" dirmove="0_-1"/>
+      <resource id="12" typeRes="Background"   name="w_zstar_2"       source="Big_star"       pos="0.49375_0.354166" scale="0.195_0.325"  rotate ="0"   dirmove="0_-1"/>
+      <resource id="13" typeRes="Background"   name="t_zstar_black_2" source="Big_black_star" pos="0.49375_0.354166" scale="0.195_0.325"           rotate ="0"   dirmove="0_-1"/>
+      <resource id="14" typeRes="Background"   name="w_star_3"        source="Big_star"       pos="0.63625_0.4125" scale="0.14625_0.24375"  rotate ="15" dirmove="0_-1"/>
+      <resource id="15" typeRes="Background"   name="t_star_black_3"  source="Big_black_star" pos="0.63625_0.4125" scale="0.14625_0.24375"           rotate ="15" dirmove="0_-1"/>
+      <resource id="16" typeRes="Background"   name="time_panel"      source="panel_boost_IG" pos="0.5_0.625" scale="0.3325_0.135" rotate ="0" dirmove="0_-1"/>
+      <resource id="17" typeRes="font"   name="Text5" source="Time Play:" pos="0.44375_0.625" scale="22_22" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="55_146_232_255" borderwd="1.5" fontIdx = "0"/>
+      <resource id="18" typeRes="font"   name="Text6" source="00:00" pos="0.58625_0.625" scale="25_25" rotate ="0" dirmove="0_-1" color="255_232_39_255" colorborder="55_146_232_255" borderwd="1.5" fontIdx = "0"/>
+      <resource id="19" typeRes="Button" name="ContinueBtn" source="ContinueBtn" 		pos="0.49375_0.8125" scale="0.1957_0.1957" rotate ="0" dirmove="0_-1"/>
+      <resource id="20" typeRes="Button" name="CloseBtn" source="CloseBtn" 		pos="0.7925_0.23125" scale="0.1465_0.1465" rotate ="0" dirmove="0_-1"/>
+    </UI>
+		<UI name="IAPMenu" deltatime = "20" distanceMoveDir = "0_1">
+			<resource id="15" typeRes="font"   name="title" source="BUY MORE COIN!" pos="0.275_0.083" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="2" fontIdx = "0"/>
+			<!---->
+			<resource id="0" typeRes="Button" name="btn_buy_pack1" source="Button2" pos="0.2_0.53125" scale="0.175_0.175" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="font"   name="price_pack_1" source="0.99$" pos="0.2_0.53125" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="title_btn_1" source="Text!" pos="0.2_0.16125" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="dec_panel_1" source="+ 100" pos="0.2_0.62041" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "1"/>			
+			<resource id="2" typeRes="Background"   name="z_panel_dec_1" source="smalPanel" pos="0.2_0.58041" scale="0.18_0.1583" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Background"   name="z_icon_pack1" source="iconSmallPack" pos="0.2_0.375" scale="0.1375_0.22916" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Background"   name="panel_pack1" source="Panel4" pos="0.2_0.375" scale="0.2_0.398" rotate ="0" dirmove="0_-1"/>
+			<!---->
+			<resource id="3" typeRes="Button" name="btn_buy_pack2" source="Button2" 		pos="0.4875_0.53125" scale="0.175_0.175" rotate ="0" dirmove="0_-1"/>
+			<resource id="4" typeRes="font"   name="price_pack_2" source="2.99$" pos="0.4875_0.53125" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>				
+			<resource id="4" typeRes="font"   name="title_btn_2" source="Text!" pos="0.4875_0.16125" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>						
+			<resource id="1" typeRes="font"   name="dec_panel_2" source="+ 100" pos="0.4875_0.62041" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "1"/>
+			<resource id="5" typeRes="Background"   name="z_panel_dec_2" source="smalPanel" pos="0.4875_0.58041" scale="0.18_0.1583" rotate ="0" dirmove="0_-1"/>
+			<resource id="5" typeRes="Background"   name="z_icon_pack2" source="iconMedPack" pos="0.4875_0.375" scale="0.1375_0.22916" rotate ="0" dirmove="0_-1"/>
+			<resource id="5" typeRes="Background"   name="panel_pack2" source="Panel4" pos="0.4875_0.375" scale="0.2_0.398" rotate ="0" dirmove="0_-1"/>
+			<!---->
+			<resource id="6" typeRes="Button" name="btn_buy_pack3" source="Button2" pos="0.775_0.53125" scale="0.175_0.175" rotate ="0" dirmove="0_-1"/>
+			<resource id="7" typeRes="font"   name="price_pack_3" source="4.99$" pos="0.775_0.53125" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="7" typeRes="font"   name="title_btn_3" source="Text!" pos="0.775_0.16125" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>		
+			<resource id="1" typeRes="font"   name="dec_panel_3" source="+ 100" pos="0.775_0.62041" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "1"/>
+			<resource id="8" typeRes="Background"   name="z_panel_dec_3" source="smalPanel" pos="0.775_0.58041" scale="0.18_0.1583" rotate ="0" dirmove="0_-1"/>
+			<resource id="8" typeRes="Background"   name="z_icon_pack3" source="iconLargePack" pos="0.775_0.375" scale="0.15_0.25" rotate ="0" dirmove="0_-1"/>
+			<resource id="8" typeRes="Background"   name="panel_pack3" source="Panel4" pos="0.775_0.375" scale="0.2_0.398" rotate ="0" dirmove="0_-1"/>
+			<!---->
+			<resource id="9" typeRes="Button" name="btn_buy_ads" source="Button2" 		pos="0.46_0.8425" scale="0.175_0.175" rotate ="0" dirmove="0_-1"/>
+			<resource id="10" typeRes="font"   name="price_pack_ads" source="0.99$" pos="0.46_0.8425" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>				
+			<resource id="10" typeRes="font"   name="dec_panel_ads" source="remove ads from game" pos="0.3625_0.7333" scale="20_20" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "1"/>			
+			<resource id="11" typeRes="Background"   name="panel_remove_ads" source="banner_remove_ads" pos="0.1975_0.766" scale="0.0925_0.15416" rotate ="0" dirmove="0_-1"/>			
+			<resource id="11" typeRes="Background"   name="panel_packads" source="WidePopUp" pos="0.3475_0.78" scale="0.44375_0.1521" rotate ="0" dirmove="0_-1"/>
+			<!---->
+			<resource id="12" typeRes="Button" name="btn_ok" source="OKBtn" 		pos="0.8875_0.9083" scale="0.1465_0.1465" rotate ="0" dirmove="0_-1"/>
+			<resource id="13" typeRes="font"   name="title_gold" source="$ 0" pos="0.75_0.7875" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="13" typeRes="Background"   name="zPanelGOLD" source="PanelGOLD" pos="0.75_0.7875" scale="0.2425_0.11125" rotate ="0" dirmove="0_-1"/>
+			<resource id="13" typeRes="Background"   name="PanelBG" source="PanelBig" pos="0.5_0.5" scale="0.895_0.84375" rotate ="0" dirmove="0_-1"/>
+			<resource id="14" typeRes="Background"   name="EmptyBG" source="EmptyBG" pos="0.5_0.5" scale="4_4" rotate ="0" dirmove="0_0"/>			
+		</UI>
+		<UI name="PopUpMenu" deltatime = "20" distanceMoveDir = "0_1">
+			<resource id="0" typeRes="Button" name="OKBtn" source="OKBtn" pos="0.7_0.625" scale="0.1465_0.1465" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="Button" name="CloseBtn" source="CloseBtn" pos="0.8375_0.625" scale="0.1465_0.1465" rotate ="0" dirmove="0_-1"/>			
+			<resource id="3" typeRes="font"   name="Text0" source="NOTICE TEXT !" pos="0.5_0.4375" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="2" fontIdx = "0"/>
+			<resource id="4" typeRes="Background"   name="WidePopUp" source="WidePopUp" pos="0.5_0.5" scale="0.955_0.3271" rotate ="0" dirmove="0_-1"/>
+			<resource id="5" typeRes="Background"   name="EmptyBG" source="EmptyBG" pos="0.5_0.5" scale="4_4" rotate ="0" dirmove="0_0"/>	
+		</UI>
+		<UI name="BoostMenu" deltatime = "20" distanceMoveDir = "0_1">
+			<resource id="15" typeRes="font"   name="title" source="BOOST MENU!" pos="0.275_0.083" scale="30_30" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="2" fontIdx = "0"/>
+			<!---->
+			<resource id="0" typeRes="font" name="title_1" source="Gravity
+			Power" pos="0.21875_0.1875" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="0" typeRes="Button" name="btn_use_1" source="Button1" pos="0.225_0.7916" scale="0.225_0.225" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="font"   name="tf_use_1" source="use" pos="0.225_0.7916" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="0" typeRes="Button" name="btn_buy_1" source="Button1" pos="0.225_0.7916" scale="0.225_0.225" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="font"   name="tf_buy_1" source="buy" pos="0.225_0.7916" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="price_1" source="cost 4" pos="0.18375_0.59583" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="remain_1" source="remain 1" pos="0.2_0.6667" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="2" typeRes="Background"   name="panel_boost_dec_1" source="boost_dec_1" pos="0.21875_0.475" scale="0.2_0.5375" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Background"   name="panel_1" source="Panel1" pos="0.21875_0.47083" scale="0.225_0.5854" rotate ="0" dirmove="0_-1"/>
+			<!---->
+			<resource id="0" typeRes="font" name="title_2" source="jump
+			Power" pos="0.51875_0.1875" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="0" typeRes="Button" name="btn_use_2" source="Button1" pos="0.525_0.7916" scale="0.225_0.225" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="font"   name="tf_use_2" source="use" pos="0.525_0.7916" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="0" typeRes="Button" name="btn_buy_2" source="Button1" pos="0.525_0.7916" scale="0.225_0.225" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="font"   name="tf_buy_2" source="buy" pos="0.525_0.7916" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="price_2" source="cost 4" pos="0.48375_0.59583" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="remain_2" source="remain 1" pos="0.5_0.6667" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="2" typeRes="Background"   name="panel_boost_dec_2" source="boost_dec_2" pos="0.51875_0.475" scale="0.2_0.5375" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Background"   name="panel_2" source="Panel1" pos="0.51875_0.47083" scale="0.225_0.5854" rotate ="0" dirmove="0_-1"/>
+			<!---->
+			<resource id="0" typeRes="font" name="title_3" source="Life
+			Power" pos="0.81875_0.1875" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="0" typeRes="Button" name="btn_use_3" source="Button1" pos="0.825_0.7916" scale="0.225_0.225" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="font"   name="tf_use_3" source="use" pos="0.825_0.7916" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="0" typeRes="Button" name="btn_buy_3" source="Button1" pos="0.825_0.7916" scale="0.225_0.225" rotate ="0" dirmove="0_-1"/>
+			<resource id="1" typeRes="font"   name="tf_buy_3" source="buy" pos="0.825_0.7916" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="price_3" source="cost 4" pos="0.78375_0.59583" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="1" typeRes="font"   name="remain_3" source="remain 1" pos="0.8_0.6667" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+			<resource id="2" typeRes="Background"   name="panel_boost_dec_3" source="boost_dec_3" pos="0.81875_0.475" scale="0.2_0.5375" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Background"   name="panel_3" source="Panel1" pos="0.81875_0.47083" scale="0.225_0.5854" rotate ="0" dirmove="0_-1"/>		
+			<!---->
+			<resource id="12" typeRes="Button" name="btn_ok" source="OKBtn" 		pos="0.95_0.92083" scale="0.1465_0.1465" rotate ="0" dirmove="0_-1"/>
+			<resource id="13" typeRes="Background"   name="PanelBG" source="PanelBig" pos="0.5_0.5" scale="0.985_0.9375" rotate ="0" dirmove="0_-1"/>
+			<resource id="14" typeRes="Background"   name="EmptyBG" source="EmptyBG" pos="0.5_0.5" scale="4_4" rotate ="0" dirmove="0_0"/>			
+		</UI>
+		<UI name="GamePlaySelectMenu" deltatime = "20" distanceMoveDir = "0_0.5">
+			<resource id="1" typeRes="Button" name = "PlayBtn" source="PlayBtn" 		pos="0.70625_0.6"  scale="0.390625_0.390625" rotate ="0" dirmove="0_-1"/>
+			<resource id="2" typeRes="Button" name = "TimePlayBtn" source="TimePlayBtn" pos="0.1375_0.233" scale="0.35_0.35" rotate ="0" dirmove="0_1"/>
+			<resource id="3" typeRes="Button" name = "CloseBtn" source="CloseBtn" 		pos="0.0475_0.925" scale="0.125_0.125" rotate ="0" dirmove="0_-1"/>			
+			<resource id="4" typeRes="font"   name="Text1" source="Zen Mode" pos="0.315_0.3" scale="25_25" rotate ="0" dirmove="0_1" color="255_255_255_255" colorborder="111_122_225_120" borderwd="1" fontIdx = "0"/>
+			<resource id="5" typeRes="font"   name="Text2" source="Story Mode" pos="0.48125_0.66" scale="25_25" rotate ="0" dirmove="0_-1" color="255_255_255_255" colorborder="111_122_225_120" borderwd="1" fontIdx = "0"/>			
+			<resource id="6" typeRes="Background" name = "backPanel" source="panel_boost_IG" pos="0.49375_0.65833" scale="0.235_0.09375" rotate ="0" dirmove="0_-1"/>				
+			<resource id="7" typeRes="Background" name = "BackgroundTrans" source="BackgroundTrans" pos="0.5_0.5" scale="1_0.37083" rotate ="0" dirmove="0_0"/>			
+		</UI>
+		<UI name="LevelSelectionMenu" deltatime = "10" distanceMoveDir = "0_0.5">
+			<resource id="1" typeRes="Button" name = "btn_move_left" source="btn_move_level"  pos="0.0425_0.5"  scale="0.3_0.3" rotate ="0" dirmove="1_0"/>
+			<resource id="2" typeRes="Button" name = "btn_move_right" source="btn_move_level" pos="0.9575_0.5" scale="0.3_0.3" rotate ="180" dirmove="-1_0"/>		
+			<resource id="3" typeRes="Button" name = "CloseBtn" source="CloseBtn" 		pos="0.0475_0.925" scale="0.125_0.125" rotate ="0" dirmove="0_0"/>
+      <resource id="4" typeRes="font"   name="Text0" source="Session 1" pos="0.5_0.825" scale="25_25" rotate ="0" dirmove="0_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+      <resource id="5" typeRes="font"   name="Text1" source="Session 1" pos="0.5_0.915" scale="17_17" rotate ="0" dirmove="0_0" color="255_255_255_255" colorborder="221_136_34_255" borderwd="1" fontIdx = "0"/>
+      
+      <resource id="7" typeRes="Background" name = "BackgroundTrans" source="BackgroundTrans" pos="0.5_0.5" scale="1_0.95" rotate ="0" dirmove="0_0"/>			
+		</UI>		
+	</menu>
+	<background>
+		<!--
+		listRender :is the sort of render in game, so in game we will see the near at first, the med, and the far is below
+		numberobject: random from x to y
+		chanceAppear: chance of appear percent, after object is destroy , other will be created with chance random x to y = x
+					  if random(x,y) = x is appear, else is none
+		dirmove: direct to move (-1,0) is move back as x cord screen, (1,0) is move forward as x cord screen
+		speedMove: 	random from x to y
+		distance: min distance each object	
+		distanceAlive: threashold position (alway as x cord) the object will be destroy
+		source: list of source texture will be loaded
+		ratioScale: random x to y as the designsize of texture
+		ratioPos: random x to y as the y position of object - screen height
+		-->
+		<Layer name = "sky" listRender ="sky,BGCloud1,BGCloud2,Far,Med,Near">
+			<layer id="0" name ="Near" numberIdxSource="2" numberobject="5_10" chanceAppear="0_0" dirmove="-1_0" speedMove = "1.5_1.5" distance = "50" distanceAlive="450" source="BigCloud,SmallCloud,WideCloud"  ratioScale = "0.5_0.5,1_1,0.8_0.8" ratioPosY = "0.75_0.8,0.75_0.8,0.75_0.8" ratioPosX = "0_0.66,0_0.66,0_0.66" fullscreen ="0"/>
+			<layer id="1" name ="Med" numberIdxSource="2" numberobject="5_10" chanceAppear="0_0" dirmove="-1_0" speedMove = "1.0_1.0" distance = "50" distanceAlive="450" source="MedCloud,SmallCloud"  ratioScale = "0.8_0.8,0.7_0.7" ratioPosY = "0.75_0.8,0.75_0.8" ratioPosX = "0_0.66,0_0.66,0_0.66" fullscreen ="0"/>
+			<layer id="2" name ="Far" numberIdxSource="2" numberobject="5_10" chanceAppear="0_0" dirmove="1_0" speedMove = "0.5_0.5" distance = "50" distanceAlive="450" source="BigCloud,MedCloud"  ratioScale = "0.8_0.8,1_1" ratioPosY = "0.75_0.8,0.75_0.8" ratioPosX = "0.33_1,0.33_1,0.33_1" fullscreen ="0"/>
+			<layer id="3" name ="sky" numberIdxSource="1" numberobject="1_1" chanceAppear="0_0" dirmove="0_0" speedMove = "0.0_0.0" distance = "0" distanceAlive="450" source="Background"  ratioScale = "1_1" ratioPosY = "0.5_0.5" ratioPosX = "0.5_0.5" fullscreen ="1"/>
+			<layer id="4" name ="BGCloud1" numberIdxSource="1" numberobject="3_3" chanceAppear="0_0" dirmove="1_0" speedMove = "0.3_0.3" distance = "0" distanceAlive="10" source="BGCloud1"  ratioScale = "2_2" ratioPosY = "0.625_0.625" ratioPosX = "0.5_0.5" fullscreen ="0"/>
+			<layer id="5" name ="BGCloud2" numberIdxSource="1" numberobject="3_3" chanceAppear="0_0" dirmove="-1_0" speedMove = "0.3_0.3" distance = "0" distanceAlive="10" source="BGCloud2"  ratioScale = "2_2" ratioPosY = "0.771_0.771" ratioPosX = "0.5_0.5" fullscreen ="0"/>
+		</Layer>
+		<Layer name = "sky_bg" listRender ="sky,BGCloud1,BGCloud2,Near">
+			<layer id="0" name ="Near" numberIdxSource="2" numberobject="5_10" chanceAppear="0_0" dirmove="-1_0" speedMove = "1.5_1.5" distance = "50" distanceAlive="450" source="MedCloud,SmallCloud,WideCloud"  ratioScale = "0.5_0.5,1_1,0.8_0.8" ratioPosY = "0.75_0.8,0.75_0.8,0.75_0.8" ratioPosX = "0_0.66,0_0.66,0_0.66" fullscreen ="0"/>
+			<layer id="3" name ="sky" numberIdxSource="1" numberobject="1_1" chanceAppear="0_0" dirmove="0_0" speedMove = "0.0_0.0" distance = "0" distanceAlive="450" source="Background"  ratioScale = "1_1" ratioPosY = "0.5_0.5" ratioPosX = "0.5_0.5" fullscreen ="1"/>
+			<layer id="4" name ="BGCloud1" numberIdxSource="1" numberobject="3_3" chanceAppear="0_0" dirmove="1_0" speedMove = "0.3_0.3" distance = "0" distanceAlive="10" source="BGCloud1"  ratioScale = "2_2" ratioPosY = "0.625_0.625" ratioPosX = "0.5_0.5" fullscreen ="0"/>
+			<layer id="5" name ="BGCloud2" numberIdxSource="1" numberobject="3_3" chanceAppear="0_0" dirmove="-1_0" speedMove = "0.3_0.3" distance = "0" distanceAlive="10" source="BGCloud2"  ratioScale = "2_2" ratioPosY = "0.771_0.771" ratioPosX = "0.5_0.5" fullscreen ="0"/>
+		</Layer>
+	</background>
+	<sound>
+		<detail type="sfx" name ="SFX_BTN_CLICK" 		source="Sound\sfx_btn_select.wav"/>
+		<detail type="sfx" name ="SFX_BTN_PLAY_CLICK" 	source="Sound\sfx_btn_play_click.wav"/>
+		<detail type="sfx" name ="SFX_BTN_BUY" 			source="Sound\sfx_btn_buy.wav"/>
+		<detail type="sfx" name ="SFX_MENU_SHOW" 		source="Sound\sfx_menu_appear.wav"/>
+		<detail type="sfx" name ="SFX_MENU_HIDE" 		source="Sound\sfx_menu_close.wav"/>
+		<detail type="sfx" name ="SFX_POPUP_APPEAR" 	source="Sound\sfx_popup_appear.wav"/>
+		<detail type="sfx" name ="SFX_BEGIN_JUMP" 		source="Sound\sfx_begin_jump.wav"/>
+		<detail type="sfx" name ="SFX_END_JUMP" 		source="Sound\sfx_end_jump.wav"/>
+		<detail type="sfx" name ="SFX_RUNNING" 		    source="Sound\sfx_running.wav"/>
+		<detail type="sfx" name ="SFX_FLYING" 		    source="Sound\sfx_flying.wav"/>
+		<detail type="sfx" name ="SFX_EXPLOSTION" 		source="Sound\sfx_bomb_explosion.wav"/>
+		<detail type="sfx" name ="SFX_GAIN_HSCORE" 		source="Sound\sfx_gain_hscore.wav"/>
+		<detail type="sfx" name ="SFX_GAME_OVER" 		source="Sound\sfx_gameover.wav"/>
+    <detail type="sfx" name ="SFX_GAIN_GOLD" 		source="Sound\sfx_gain_gold.wav"/>
+		<detail type="music" name ="MUSIC_1" 			source="Sound\song_1.wav"/>
+		<detail type="music" name ="MUSIC_INGAME" 		source="Sound\song_ingame.wav"/>
+	</sound>
+</GAME>

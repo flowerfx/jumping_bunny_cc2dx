@@ -1,0 +1,13 @@
+<GAME>
+	<BoostItem>
+		<Item id="0" name="Item_gravity" displayName ="Gravity Boost" cost="20" number="3" effect=""/>
+		<Item id="1" name="Item_Jump" displayName ="Jump Boost" cost="20" number="3" effect=""/>
+		<Item id="2" name="Item_life" displayName ="life Boost" cost="20" number="3" effect=""/>
+	</BoostItem>
+	<IAPItem>
+		<Item id="0" name="small_pack" key = "_bunny_small_pack" 	displayName ="Small Pack" 	gain ="100" cost="0.99$"/>
+		<Item id="1" name="med_pack"   key = "_bunny_medium_pack"	displayName ="Medium Pack" 	gain ="250" cost="1.99$"/>
+		<Item id="2" name="mega_pack"  key = "_bunny_mega_pack"		displayName ="Mega Pack" 	gain ="800" cost="4.99$"/>
+		<Item id="3" name="remove_ads" key = "_bunny_remove_ads"	displayName ="Remove Ads" 	gain ="1" 	cost="0.99$"/>
+	</IAPItem>
+</GAME>

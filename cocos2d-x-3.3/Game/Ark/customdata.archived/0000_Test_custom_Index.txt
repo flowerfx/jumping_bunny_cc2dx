@@ -1,0 +1,329 @@
+MD5 Digest:            e9ae66621d852b6022b30b7b2878b2f3
+NumFiles:              36
+NumUncompressedFiles:  10
+Ark file size:         13226080
+
+Filename:              bg_loading.png
+Subdir:                
+Offset in ArkArchive:  16
+Uncompressed filesize: 269796
+Compressed filesize:   269796
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              arial.ttf
+Subdir:                gamefonts/
+Offset in ArkArchive:  269812
+Uncompressed filesize: 778552
+Compressed filesize:   429154
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              Big_Bimbo_NC_0.ttf
+Subdir:                gamefonts/
+Offset in ArkArchive:  698966
+Uncompressed filesize: 30992
+Compressed filesize:   17058
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              comic.ttf
+Subdir:                gamefonts/
+Offset in ArkArchive:  716024
+Uncompressed filesize: 132832
+Compressed filesize:   92562
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              Cookies.ttf
+Subdir:                gamefonts/
+Offset in ArkArchive:  808586
+Uncompressed filesize: 50784
+Compressed filesize:   28274
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              grobold.ttf
+Subdir:                gamefonts/
+Offset in ArkArchive:  836860
+Uncompressed filesize: 31136
+Compressed filesize:   13449
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              JandaManateeSolid.ttf
+Subdir:                gamefonts/
+Offset in ArkArchive:  850309
+Uncompressed filesize: 37728
+Compressed filesize:   21528
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              SAF.ttf
+Subdir:                gamefonts/
+Offset in ArkArchive:  871837
+Uncompressed filesize: 42620
+Compressed filesize:   15566
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_begin_jump.wav
+Subdir:                Sound/
+Offset in ArkArchive:  887403
+Uncompressed filesize: 156752
+Compressed filesize:   124547
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_bomb_explosion.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1011950
+Uncompressed filesize: 744462
+Compressed filesize:   340364
+Timestamp:             1439365388
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_btn_buy.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1352314
+Uncompressed filesize: 193804
+Compressed filesize:   121560
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_btn_play_click.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1473874
+Uncompressed filesize: 133900
+Compressed filesize:   103151
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_btn_select.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1577025
+Uncompressed filesize: 27916
+Compressed filesize:   7534
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_end_jump.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1584559
+Uncompressed filesize: 43856
+Compressed filesize:   30761
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_flying.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1615320
+Uncompressed filesize: 156752
+Compressed filesize:   106030
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_gain_gold.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1721350
+Uncompressed filesize: 193768
+Compressed filesize:   158996
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_gain_hscore.wav
+Subdir:                Sound/
+Offset in ArkArchive:  1880346
+Uncompressed filesize: 256056
+Compressed filesize:   124471
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_gameover.wav
+Subdir:                Sound/
+Offset in ArkArchive:  2004817
+Uncompressed filesize: 537140
+Compressed filesize:   253881
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_menu_appear.wav
+Subdir:                Sound/
+Offset in ArkArchive:  2258698
+Uncompressed filesize: 55564
+Compressed filesize:   21898
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_menu_close.wav
+Subdir:                Sound/
+Offset in ArkArchive:  2280596
+Uncompressed filesize: 64780
+Compressed filesize:   47908
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_popup_appear.wav
+Subdir:                Sound/
+Offset in ArkArchive:  2328504
+Uncompressed filesize: 37132
+Compressed filesize:   10961
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              sfx_running.wav
+Subdir:                Sound/
+Offset in ArkArchive:  2339465
+Uncompressed filesize: 21650
+Compressed filesize:   9753
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              song_1.wav
+Subdir:                Sound/
+Offset in ArkArchive:  2349218
+Uncompressed filesize: 5272088
+Compressed filesize:   5272088
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              Atlas.png
+Subdir:                Texture/GamePlay/
+Offset in ArkArchive:  7621306
+Uncompressed filesize: 2544625
+Compressed filesize:   2544625
+Timestamp:             1439365389
+Extract:               false
+Decrypt:               false
+
+Filename:              Atlas_mip.png
+Subdir:                Texture/GamePlay/
+Offset in ArkArchive:  10165931
+Uncompressed filesize: 869817
+Compressed filesize:   869817
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              BunnyAnimation.ExportJson
+Subdir:                Texture/GamePlay/
+Offset in ArkArchive:  11035748
+Uncompressed filesize: 60990
+Compressed filesize:   3723
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              BunnyAnimation0.plist
+Subdir:                Texture/GamePlay/
+Offset in ArkArchive:  11039471
+Uncompressed filesize: 3184
+Compressed filesize:   533
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              BunnyAnimation0.png
+Subdir:                Texture/GamePlay/
+Offset in ArkArchive:  11040004
+Uncompressed filesize: 40752
+Compressed filesize:   40752
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              streak.png
+Subdir:                Texture/GamePlay/
+Offset in ArkArchive:  11080756
+Uncompressed filesize: 9081
+Compressed filesize:   9081
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              Button0.png
+Subdir:                Texture/UI/
+Offset in ArkArchive:  11089837
+Uncompressed filesize: 518310
+Compressed filesize:   518310
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              Button0_mip.png
+Subdir:                Texture/UI/
+Offset in ArkArchive:  11608147
+Uncompressed filesize: 249510
+Compressed filesize:   249510
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              Menu0.png
+Subdir:                Texture/UI/
+Offset in ArkArchive:  11857657
+Uncompressed filesize: 876884
+Compressed filesize:   876884
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              Menu0_mip.png
+Subdir:                Texture/UI/
+Offset in ArkArchive:  12734541
+Uncompressed filesize: 470312
+Compressed filesize:   470312
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              DataItem.xml
+Subdir:                xml/
+Offset in ArkArchive:  13204853
+Uncompressed filesize: 796
+Compressed filesize:   281
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              MenuItem.xml
+Subdir:                xml/
+Offset in ArkArchive:  13205134
+Uncompressed filesize: 45407
+Compressed filesize:   6565
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+
+Filename:              ObjectEntity.xml
+Subdir:                xml/
+Offset in ArkArchive:  13211699
+Uncompressed filesize: 110270
+Compressed filesize:   8333
+Timestamp:             1439365390
+Extract:               false
+Decrypt:               false
+

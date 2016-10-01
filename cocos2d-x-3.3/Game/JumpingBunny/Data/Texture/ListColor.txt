@@ -1,0 +1,16 @@
+pop-up
+	background : 	e59330	
+	border: 9c5913
+	inside: ffaa22 - opacity: 68%
+	
+button circle
+	background: 	ffcc44
+	outside border:	000000 - opacity: 56% - 
+	inside border: 995511
+	inside 1 :		ffaa22
+	inside 2 :
+
+icon
+	background : white
+	border:	dd8822
+	

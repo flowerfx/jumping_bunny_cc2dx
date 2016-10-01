@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Init">
+      <UniqueIdentifier>{a0dbc50f-6ab1-4389-8650-9eace1045aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{3c34519f-a032-4023-8912-9b0337b58007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{e60d2b4a-c0d3-4d0a-8876-ec0268d5bfa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control">
+      <UniqueIdentifier>{2b652116-edd4-406b-822d-d83b1fad62d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Background">
+      <UniqueIdentifier>{0c2d95d1-82d2-48ba-a7c1-f15dca0c265e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePlay">
+      <UniqueIdentifier>{87fea2f1-45d6-4c92-a09b-a87c5ce7f918}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\SourceGame\Init\AppDelegate.h">
+      <Filter>Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Init\AppMacros.h">
+      <Filter>Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Init\ParamTexture.h">
+      <Filter>Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Utility\LoadDataXML.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Utility\ObjectTexture.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\MainMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Init\DisplayView.h">
+      <Filter>Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\MenuManager.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\GamePlay\OrbitObject.h">
+      <Filter>GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\GamePlay\EntityObject.h">
+      <Filter>GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\GamePlay\ManageObjectAP.h">
+      <Filter>GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\GamePlay\APManager.h">
+      <Filter>GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\GamePlay\MainCharacterObject.h">
+      <Filter>GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Control\InputManager.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\MenuEntity.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\MainSceneGame.h">
+      <Filter>Init</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\InfoMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Background\ObjectBGEntity.h">
+      <Filter>Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Background\CloudObject.h">
+      <Filter>Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\OptionsMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Background\BGObject.h">
+      <Filter>Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\HUDMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\IGM.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\ResultMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\IAPMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\PopUpMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Utility\FileManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\BoostMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Menu\SplashScreen.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Utility\IAPManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SourceGame\Utility\BoostManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\SourceGame\Init\AppDelegate.cpp">
+      <Filter>Init</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Utility\LoadDataXML.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Utility\ObjectTexture.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\MainMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Init\DisplayView.cpp">
+      <Filter>Init</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\MenuManager.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\OptionsMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\MainGame.cpp" />
+    <ClCompile Include="..\..\SourceGame\GamePlay\OrbitObject.cpp">
+      <Filter>GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\GamePlay\EntityObject.cpp">
+      <Filter>GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\GamePlay\ManageObjectAP.cpp">
+      <Filter>GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\GamePlay\APManager.cpp">
+      <Filter>GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\GamePlay\MainCharacterObject.cpp">
+      <Filter>GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Control\InputManager.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\MenuEntity.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\MainSceneGame.cpp">
+      <Filter>Init</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\InfoMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Background\ObjectBGEntity.cpp">
+      <Filter>Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Background\CloudObject.cpp">
+      <Filter>Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Background\BGObject.cpp">
+      <Filter>Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\HUDMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\IGM.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\ResultMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\IAPMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\PopUpMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Utility\FileManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\BoostMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Menu\SplashScreen.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Utility\IAPManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SourceGame\Utility\BoostManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
